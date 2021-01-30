@@ -1,4 +1,4 @@
-module gitlab.com/gitlab-org/gitlab-runner
+module github.com/debu99/cicd-runner
 
 go 1.13
 

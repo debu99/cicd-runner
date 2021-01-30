@@ -1,4 +1,5 @@
-NAME ?= gitlab-runner
+#NAME ?= gitlab-runner
+NAME ?= cicd-runner
 export PACKAGE_NAME ?= $(NAME)
 export VERSION := $(shell ./ci/version)
 REVISION := $(shell git rev-parse --short=8 HEAD || echo unknown)
@@ -29,7 +30,8 @@ RPM_PLATFORMS ?= el/6 el/7 el/8 \
     fedora/30
 RPM_ARCHS ?= x86_64 i686 arm armhf arm64 aarch64 s390x
 
-PKG = gitlab.com/gitlab-org/$(PACKAGE_NAME)
+#PKG = gitlab.com/gitlab-org/$(PACKAGE_NAME)
+PKG = github.com/debu99/$(PACKAGE_NAME)
 COMMON_PACKAGE_NAMESPACE = $(PKG)/common
 
 BUILD_DIR := $(CURDIR)

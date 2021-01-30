@@ -26,13 +26,13 @@ func main() {
 
 	app := cli.NewApp()
 	app.Name = filepath.Base(os.Args[0])
-	app.Usage = "a GitLab Runner Helper"
+	app.Usage = "a CICD Runner Helper"
 	app.Version = common.AppVersion.ShortLine()
 	cli.VersionPrinter = common.AppVersion.Printer
 	app.Authors = []cli.Author{
 		{
-			Name:  "GitLab Inc.",
-			Email: "support@gitlab.com",
+			Name:  "Clix.dev",
+			Email: "support@Clix.dev",
 		},
 	}
 	app.Commands = common.GetCommands()
