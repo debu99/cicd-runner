@@ -32,7 +32,7 @@ func (n *NullService) Stop(s service.Service) error {
 
 func runServiceInstall(s service.Service, c *cli.Context) error {
 	if user := c.String("user"); user == "" && os.Getuid() == 0 {
-		logrus.Fatal("Please specify user that will run gitlab-runner service")
+		logrus.Fatal("Please specify user that will run cicd-runner service")
 	}
 
 	if configFile := c.String("config"); configFile != "" {
