@@ -6,9 +6,9 @@ import (
 
 	"github.com/sirupsen/logrus"
 
-	"gitlab.com/gitlab-org/gitlab-runner/helpers"
-	"gitlab.com/gitlab-org/gitlab-runner/helpers/process"
-	url_helpers "gitlab.com/gitlab-org/gitlab-runner/helpers/url"
+	"github.com/debu99/cicd-runner/helpers"
+	"github.com/debu99/cicd-runner/helpers/process"
+	url_helpers "github.com/debu99/cicd-runner/helpers/url"
 )
 
 type BuildLogger struct {

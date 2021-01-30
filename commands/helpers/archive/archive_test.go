@@ -6,11 +6,11 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"gitlab.com/gitlab-org/gitlab-runner/commands/helpers/archive"
+	"github.com/debu99/cicd-runner/commands/helpers/archive"
 
-	"gitlab.com/gitlab-org/gitlab-runner/commands/helpers/archive/gziplegacy"
-	_ "gitlab.com/gitlab-org/gitlab-runner/commands/helpers/archive/raw"
-	"gitlab.com/gitlab-org/gitlab-runner/commands/helpers/archive/ziplegacy"
+	"github.com/debu99/cicd-runner/commands/helpers/archive/gziplegacy"
+	_ "github.com/debu99/cicd-runner/commands/helpers/archive/raw"
+	"github.com/debu99/cicd-runner/commands/helpers/archive/ziplegacy"
 )
 
 func TestDefaultRegistration(t *testing.T) {

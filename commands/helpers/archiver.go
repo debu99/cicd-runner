@@ -3,14 +3,14 @@ package helpers
 import (
 	"os"
 
-	"gitlab.com/gitlab-org/gitlab-runner/commands/helpers/archive"
-	"gitlab.com/gitlab-org/gitlab-runner/commands/helpers/archive/fastzip"
-	"gitlab.com/gitlab-org/gitlab-runner/helpers/featureflags"
+	"github.com/debu99/cicd-runner/commands/helpers/archive"
+	"github.com/debu99/cicd-runner/commands/helpers/archive/fastzip"
+	"github.com/debu99/cicd-runner/helpers/featureflags"
 
 	// auto-register default archivers/extractors
-	_ "gitlab.com/gitlab-org/gitlab-runner/commands/helpers/archive/gziplegacy"
-	_ "gitlab.com/gitlab-org/gitlab-runner/commands/helpers/archive/raw"
-	_ "gitlab.com/gitlab-org/gitlab-runner/commands/helpers/archive/ziplegacy"
+	_ "github.com/debu99/cicd-runner/commands/helpers/archive/gziplegacy"
+	_ "github.com/debu99/cicd-runner/commands/helpers/archive/raw"
+	_ "github.com/debu99/cicd-runner/commands/helpers/archive/ziplegacy"
 
 	"github.com/sirupsen/logrus"
 )

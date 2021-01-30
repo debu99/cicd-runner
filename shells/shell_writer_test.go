@@ -11,8 +11,8 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"gitlab.com/gitlab-org/gitlab-runner/shells"
-	"gitlab.com/gitlab-org/gitlab-runner/shells/shellstest"
+	"github.com/debu99/cicd-runner/shells"
+	"github.com/debu99/cicd-runner/shells/shellstest"
 )
 
 func runShell(t *testing.T, shell, cwd string, writer shells.ShellWriter) {

@@ -7,7 +7,7 @@ import (
 	"github.com/minio/minio-go/v6"
 	"github.com/minio/minio-go/v6/pkg/credentials"
 
-	"gitlab.com/gitlab-org/gitlab-runner/common"
+	"github.com/debu99/cicd-runner/common"
 )
 
 const DefaultAWSS3Server = "s3.amazonaws.com"

@@ -9,16 +9,16 @@ import (
 	"github.com/urfave/cli"
 	clihelpers "gitlab.com/ayufan/golang-cli-helpers"
 
-	"gitlab.com/gitlab-org/gitlab-runner/common"
-	"gitlab.com/gitlab-org/gitlab-runner/helpers/gitlab_ci_yaml_parser"
+	"github.com/debu99/cicd-runner/common"
+	"github.com/debu99/cicd-runner/helpers/gitlab_ci_yaml_parser"
 
 	// Force to load all executors, executes init() on them
-	_ "gitlab.com/gitlab-org/gitlab-runner/executors/custom"
-	_ "gitlab.com/gitlab-org/gitlab-runner/executors/docker"
-	_ "gitlab.com/gitlab-org/gitlab-runner/executors/parallels"
-	_ "gitlab.com/gitlab-org/gitlab-runner/executors/shell"
-	_ "gitlab.com/gitlab-org/gitlab-runner/executors/ssh"
-	_ "gitlab.com/gitlab-org/gitlab-runner/executors/virtualbox"
+	_ "github.com/debu99/cicd-runner/executors/custom"
+	_ "github.com/debu99/cicd-runner/executors/docker"
+	_ "github.com/debu99/cicd-runner/executors/parallels"
+	_ "github.com/debu99/cicd-runner/executors/shell"
+	_ "github.com/debu99/cicd-runner/executors/ssh"
+	_ "github.com/debu99/cicd-runner/executors/virtualbox"
 )
 
 type ExecCommand struct {

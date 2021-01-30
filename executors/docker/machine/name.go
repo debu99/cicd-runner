@@ -6,8 +6,8 @@ import (
 	"strings"
 	"time"
 
-	"gitlab.com/gitlab-org/gitlab-runner/common"
-	"gitlab.com/gitlab-org/gitlab-runner/helpers/dns"
+	"github.com/debu99/cicd-runner/common"
+	"github.com/debu99/cicd-runner/helpers/dns"
 )
 
 func machineFormat(runner string, template string) string {

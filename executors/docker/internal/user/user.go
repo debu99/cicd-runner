@@ -7,8 +7,8 @@ import (
 	"strconv"
 	"strings"
 
-	"gitlab.com/gitlab-org/gitlab-runner/executors/docker/internal/exec"
-	"gitlab.com/gitlab-org/gitlab-runner/helpers/docker"
+	"github.com/debu99/cicd-runner/executors/docker/internal/exec"
+	"github.com/debu99/cicd-runner/helpers/docker"
 )
 
 const (

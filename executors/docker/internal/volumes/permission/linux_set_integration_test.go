@@ -12,11 +12,11 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"gitlab.com/gitlab-org/gitlab-runner/common"
-	"gitlab.com/gitlab-org/gitlab-runner/executors/docker/internal/volumes/permission"
-	"gitlab.com/gitlab-org/gitlab-runner/executors/docker/internal/wait"
-	"gitlab.com/gitlab-org/gitlab-runner/helpers"
-	"gitlab.com/gitlab-org/gitlab-runner/helpers/docker"
+	"github.com/debu99/cicd-runner/common"
+	"github.com/debu99/cicd-runner/executors/docker/internal/volumes/permission"
+	"github.com/debu99/cicd-runner/executors/docker/internal/wait"
+	"github.com/debu99/cicd-runner/helpers"
+	"github.com/debu99/cicd-runner/helpers/docker"
 )
 
 func TestDockerLinuxSetter(t *testing.T) {

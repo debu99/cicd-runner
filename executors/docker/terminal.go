@@ -8,9 +8,9 @@ import (
 	"time"
 
 	"github.com/docker/docker/api/types"
-	"gitlab.com/gitlab-org/gitlab-runner/common"
-	"gitlab.com/gitlab-org/gitlab-runner/helpers/docker"
-	terminalsession "gitlab.com/gitlab-org/gitlab-runner/session/terminal"
+	"github.com/debu99/cicd-runner/common"
+	"github.com/debu99/cicd-runner/helpers/docker"
+	terminalsession "github.com/debu99/cicd-runner/session/terminal"
 	terminal "gitlab.com/gitlab-org/gitlab-terminal"
 )
 

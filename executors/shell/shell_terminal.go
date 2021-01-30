@@ -10,7 +10,7 @@ import (
 
 	"github.com/kr/pty"
 
-	terminalsession "gitlab.com/gitlab-org/gitlab-runner/session/terminal"
+	terminalsession "github.com/debu99/cicd-runner/session/terminal"
 	terminal "gitlab.com/gitlab-org/gitlab-terminal"
 )
 

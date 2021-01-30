@@ -5,7 +5,7 @@ import (
 
 	"github.com/prometheus/client_golang/prometheus"
 
-	"gitlab.com/gitlab-org/gitlab-runner/common"
+	"github.com/debu99/cicd-runner/common"
 )
 
 var numJobFailuresDesc = prometheus.NewDesc(

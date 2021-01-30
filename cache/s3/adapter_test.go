@@ -10,8 +10,8 @@ import (
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/require"
 
-	"gitlab.com/gitlab-org/gitlab-runner/cache"
-	"gitlab.com/gitlab-org/gitlab-runner/common"
+	"github.com/debu99/cicd-runner/cache"
+	"github.com/debu99/cicd-runner/common"
 )
 
 var defaultTimeout = 1 * time.Hour

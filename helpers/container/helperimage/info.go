@@ -3,7 +3,7 @@ package helperimage
 import (
 	"fmt"
 
-	"gitlab.com/gitlab-org/gitlab-runner/helpers/docker/errors"
+	"github.com/debu99/cicd-runner/helpers/docker/errors"
 )
 
 const (

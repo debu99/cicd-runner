@@ -11,9 +11,9 @@ import (
 	mock "github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/require"
 
-	"gitlab.com/gitlab-org/gitlab-runner/commands/helpers/archive"
-	"gitlab.com/gitlab-org/gitlab-runner/common"
-	"gitlab.com/gitlab-org/gitlab-runner/helpers"
+	"github.com/debu99/cicd-runner/commands/helpers/archive"
+	"github.com/debu99/cicd-runner/common"
+	"github.com/debu99/cicd-runner/helpers"
 )
 
 var UploaderCredentials = common.JobCredentials{

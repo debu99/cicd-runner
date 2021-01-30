@@ -10,9 +10,9 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
 
-	"gitlab.com/gitlab-org/gitlab-runner/common"
-	"gitlab.com/gitlab-org/gitlab-runner/helpers/docker"
-	"gitlab.com/gitlab-org/gitlab-runner/helpers/docker/test"
+	"github.com/debu99/cicd-runner/common"
+	"github.com/debu99/cicd-runner/helpers/docker"
+	"github.com/debu99/cicd-runner/helpers/docker/test"
 )
 
 func TestDockerWaiter_Wait(t *testing.T) {

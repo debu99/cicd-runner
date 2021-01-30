@@ -9,9 +9,9 @@ import (
 	"github.com/sirupsen/logrus"
 	"github.com/urfave/cli"
 
-	"gitlab.com/gitlab-org/gitlab-runner/common"
-	"gitlab.com/gitlab-org/gitlab-runner/helpers"
-	service_helpers "gitlab.com/gitlab-org/gitlab-runner/helpers/service"
+	"github.com/debu99/cicd-runner/common"
+	"github.com/debu99/cicd-runner/helpers"
+	service_helpers "github.com/debu99/cicd-runner/helpers/service"
 )
 
 const (

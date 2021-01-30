@@ -3,7 +3,7 @@ package machine
 import (
 	"errors"
 
-	"gitlab.com/gitlab-org/gitlab-runner/session/terminal"
+	"github.com/debu99/cicd-runner/session/terminal"
 )
 
 func (e *machineExecutor) Connect() (terminal.Conn, error) {

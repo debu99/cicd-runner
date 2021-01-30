@@ -9,9 +9,9 @@ import (
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/require"
 
-	_ "gitlab.com/gitlab-org/gitlab-runner/cache/test"
-	"gitlab.com/gitlab-org/gitlab-runner/common"
-	"gitlab.com/gitlab-org/gitlab-runner/helpers/tls"
+	_ "github.com/debu99/cicd-runner/cache/test"
+	"github.com/debu99/cicd-runner/common"
+	"github.com/debu99/cicd-runner/helpers/tls"
 )
 
 func TestWriteGitSSLConfig(t *testing.T) {

@@ -3,7 +3,7 @@ package azure
 import (
 	"fmt"
 
-	"gitlab.com/gitlab-org/gitlab-runner/common"
+	"github.com/debu99/cicd-runner/common"
 )
 
 type credentialsResolver interface {

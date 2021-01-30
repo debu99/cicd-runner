@@ -8,9 +8,9 @@ import (
 	"github.com/docker/docker/api/types/container"
 	"github.com/sirupsen/logrus"
 
-	"gitlab.com/gitlab-org/gitlab-runner/executors/docker/internal/wait"
-	"gitlab.com/gitlab-org/gitlab-runner/helpers"
-	"gitlab.com/gitlab-org/gitlab-runner/helpers/docker"
+	"github.com/debu99/cicd-runner/executors/docker/internal/wait"
+	"github.com/debu99/cicd-runner/helpers"
+	"github.com/debu99/cicd-runner/helpers/docker"
 )
 
 const dstMount = "/gitlab-runner-cache-init"

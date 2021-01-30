@@ -6,8 +6,8 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"gitlab.com/gitlab-org/gitlab-runner/helpers/vault"
-	"gitlab.com/gitlab-org/gitlab-runner/helpers/vault/auth_methods"
+	"github.com/debu99/cicd-runner/helpers/vault"
+	"github.com/debu99/cicd-runner/helpers/vault/auth_methods"
 )
 
 func TestNewMethod(t *testing.T) {

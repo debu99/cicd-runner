@@ -16,7 +16,7 @@ import (
 	"github.com/docker/cli/cli/config/types"
 	"github.com/docker/docker/pkg/homedir"
 
-	"gitlab.com/gitlab-org/gitlab-runner/common"
+	"github.com/debu99/cicd-runner/common"
 )
 
 const (

@@ -30,16 +30,16 @@ import (
 	"k8s.io/client-go/kubernetes"
 	"k8s.io/client-go/rest/fake"
 
-	"gitlab.com/gitlab-org/gitlab-runner/common"
-	"gitlab.com/gitlab-org/gitlab-runner/common/buildtest"
-	"gitlab.com/gitlab-org/gitlab-runner/executors"
-	"gitlab.com/gitlab-org/gitlab-runner/helpers"
-	"gitlab.com/gitlab-org/gitlab-runner/helpers/container/helperimage"
-	dns_test "gitlab.com/gitlab-org/gitlab-runner/helpers/dns/test"
-	"gitlab.com/gitlab-org/gitlab-runner/helpers/featureflags"
-	"gitlab.com/gitlab-org/gitlab-runner/session"
-	"gitlab.com/gitlab-org/gitlab-runner/session/proxy"
-	"gitlab.com/gitlab-org/gitlab-runner/shells"
+	"github.com/debu99/cicd-runner/common"
+	"github.com/debu99/cicd-runner/common/buildtest"
+	"github.com/debu99/cicd-runner/executors"
+	"github.com/debu99/cicd-runner/helpers"
+	"github.com/debu99/cicd-runner/helpers/container/helperimage"
+	dns_test "github.com/debu99/cicd-runner/helpers/dns/test"
+	"github.com/debu99/cicd-runner/helpers/featureflags"
+	"github.com/debu99/cicd-runner/session"
+	"github.com/debu99/cicd-runner/session/proxy"
+	"github.com/debu99/cicd-runner/shells"
 )
 
 type featureFlagTest func(t *testing.T, flagName string, flagValue bool)

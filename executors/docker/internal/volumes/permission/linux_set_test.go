@@ -13,8 +13,8 @@ import (
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/require"
 
-	"gitlab.com/gitlab-org/gitlab-runner/executors/docker/internal/wait"
-	"gitlab.com/gitlab-org/gitlab-runner/helpers/docker"
+	"github.com/debu99/cicd-runner/executors/docker/internal/wait"
+	"github.com/debu99/cicd-runner/helpers/docker"
 )
 
 func TestNewDockerLinuxSetter(t *testing.T) {

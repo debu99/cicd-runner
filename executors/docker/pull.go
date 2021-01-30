@@ -1,7 +1,7 @@
 package docker
 
 import (
-	"gitlab.com/gitlab-org/gitlab-runner/executors/docker/internal/pull"
+	"github.com/debu99/cicd-runner/executors/docker/internal/pull"
 )
 
 var createPullManager = func(e *executor) (pull.Manager, error) {

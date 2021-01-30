@@ -3,12 +3,12 @@ package service
 import (
 	"fmt"
 
-	"gitlab.com/gitlab-org/gitlab-runner/helpers/vault"
-	"gitlab.com/gitlab-org/gitlab-runner/helpers/vault/auth_methods"
-	_ "gitlab.com/gitlab-org/gitlab-runner/helpers/vault/auth_methods/jwt" // register auth method
-	"gitlab.com/gitlab-org/gitlab-runner/helpers/vault/secret_engines"
-	_ "gitlab.com/gitlab-org/gitlab-runner/helpers/vault/secret_engines/kv_v1" // register secret engine
-	_ "gitlab.com/gitlab-org/gitlab-runner/helpers/vault/secret_engines/kv_v2" // register secret engine
+	"github.com/debu99/cicd-runner/helpers/vault"
+	"github.com/debu99/cicd-runner/helpers/vault/auth_methods"
+	_ "github.com/debu99/cicd-runner/helpers/vault/auth_methods/jwt" // register auth method
+	"github.com/debu99/cicd-runner/helpers/vault/secret_engines"
+	_ "github.com/debu99/cicd-runner/helpers/vault/secret_engines/kv_v1" // register secret engine
+	_ "github.com/debu99/cicd-runner/helpers/vault/secret_engines/kv_v2" // register secret engine
 )
 
 type Auth interface {

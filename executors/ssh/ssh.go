@@ -4,9 +4,9 @@ import (
 	"errors"
 	"fmt"
 
-	"gitlab.com/gitlab-org/gitlab-runner/common"
-	"gitlab.com/gitlab-org/gitlab-runner/executors"
-	"gitlab.com/gitlab-org/gitlab-runner/helpers/ssh"
+	"github.com/debu99/cicd-runner/common"
+	"github.com/debu99/cicd-runner/executors"
+	"github.com/debu99/cicd-runner/helpers/ssh"
 )
 
 type executor struct {

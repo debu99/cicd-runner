@@ -10,8 +10,8 @@ import (
 	"github.com/tevino/abool"
 	"github.com/urfave/cli"
 
-	"gitlab.com/gitlab-org/gitlab-runner/common"
-	"gitlab.com/gitlab-org/gitlab-runner/network"
+	"github.com/debu99/cicd-runner/common"
+	"github.com/debu99/cicd-runner/network"
 )
 
 type RunSingleCommand struct {

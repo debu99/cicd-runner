@@ -6,8 +6,8 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"gitlab.com/gitlab-org/gitlab-runner/helpers/vault"
-	"gitlab.com/gitlab-org/gitlab-runner/helpers/vault/internal/registry"
+	"github.com/debu99/cicd-runner/helpers/vault"
+	"github.com/debu99/cicd-runner/helpers/vault/internal/registry"
 )
 
 func TestMustRegisterFactory(t *testing.T) {

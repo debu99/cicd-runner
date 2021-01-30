@@ -13,7 +13,7 @@ import (
 
 	"github.com/markelog/trie"
 
-	"gitlab.com/gitlab-org/gitlab-runner/helpers"
+	"github.com/debu99/cicd-runner/helpers"
 )
 
 const maskedText = "[MASKED]"

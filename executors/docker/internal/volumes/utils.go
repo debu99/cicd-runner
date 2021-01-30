@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"path/filepath"
 
-	"gitlab.com/gitlab-org/gitlab-runner/executors/docker/internal/volumes/parser"
+	"github.com/debu99/cicd-runner/executors/docker/internal/volumes/parser"
 )
 
 var (

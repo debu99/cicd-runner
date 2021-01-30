@@ -12,7 +12,7 @@ import (
 	"github.com/sirupsen/logrus"
 	"github.com/stretchr/testify/assert"
 
-	"gitlab.com/gitlab-org/gitlab-runner/helpers"
+	"github.com/debu99/cicd-runner/helpers"
 )
 
 const cacheExtractorArchive = "archive.zip"

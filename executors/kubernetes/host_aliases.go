@@ -5,9 +5,9 @@ import (
 
 	api "k8s.io/api/core/v1"
 
-	"gitlab.com/gitlab-org/gitlab-runner/common"
-	"gitlab.com/gitlab-org/gitlab-runner/helpers/container/services"
-	"gitlab.com/gitlab-org/gitlab-runner/helpers/dns"
+	"github.com/debu99/cicd-runner/common"
+	"github.com/debu99/cicd-runner/helpers/container/services"
+	"github.com/debu99/cicd-runner/helpers/dns"
 )
 
 type invalidHostAliasDNSError struct {

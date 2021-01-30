@@ -3,9 +3,9 @@ package vault
 import (
 	"fmt"
 
-	"gitlab.com/gitlab-org/gitlab-runner/common"
-	"gitlab.com/gitlab-org/gitlab-runner/helpers/secrets"
-	"gitlab.com/gitlab-org/gitlab-runner/helpers/vault/service"
+	"github.com/debu99/cicd-runner/common"
+	"github.com/debu99/cicd-runner/helpers/secrets"
+	"github.com/debu99/cicd-runner/helpers/vault/service"
 )
 
 const (

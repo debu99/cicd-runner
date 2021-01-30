@@ -20,8 +20,8 @@ import (
 	"gocloud.dev/blob"
 	"gocloud.dev/blob/fileblob"
 
-	"gitlab.com/gitlab-org/gitlab-runner/commands/helpers/archive"
-	"gitlab.com/gitlab-org/gitlab-runner/helpers"
+	"github.com/debu99/cicd-runner/commands/helpers/archive"
+	"github.com/debu99/cicd-runner/helpers"
 )
 
 const cacheArchiverArchive = "archive.zip"

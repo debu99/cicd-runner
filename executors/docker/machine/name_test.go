@@ -5,8 +5,8 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"gitlab.com/gitlab-org/gitlab-runner/common"
-	dns_test "gitlab.com/gitlab-org/gitlab-runner/helpers/dns/test"
+	"github.com/debu99/cicd-runner/common"
+	dns_test "github.com/debu99/cicd-runner/helpers/dns/test"
 )
 
 func TestNewMachineName(t *testing.T) {

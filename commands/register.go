@@ -13,9 +13,9 @@ import (
 	"github.com/sirupsen/logrus"
 	"github.com/urfave/cli"
 
-	"gitlab.com/gitlab-org/gitlab-runner/common"
-	"gitlab.com/gitlab-org/gitlab-runner/helpers/ssh"
-	"gitlab.com/gitlab-org/gitlab-runner/network"
+	"github.com/debu99/cicd-runner/common"
+	"github.com/debu99/cicd-runner/helpers/ssh"
+	"github.com/debu99/cicd-runner/network"
 )
 
 type configTemplate struct {

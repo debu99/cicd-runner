@@ -12,8 +12,8 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
 
-	"gitlab.com/gitlab-org/gitlab-runner/common"
-	"gitlab.com/gitlab-org/gitlab-runner/log/test"
+	"github.com/debu99/cicd-runner/common"
+	"github.com/debu99/cicd-runner/log/test"
 )
 
 func TestProcessRunner_BuildLimit(t *testing.T) {

@@ -9,7 +9,7 @@ import (
 	"github.com/getsentry/raven-go"
 	"github.com/sirupsen/logrus"
 
-	"gitlab.com/gitlab-org/gitlab-runner/common"
+	"github.com/debu99/cicd-runner/common"
 )
 
 type LogHook struct {

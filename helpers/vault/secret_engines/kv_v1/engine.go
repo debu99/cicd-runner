@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"path"
 
-	"gitlab.com/gitlab-org/gitlab-runner/helpers/vault"
-	"gitlab.com/gitlab-org/gitlab-runner/helpers/vault/secret_engines"
+	"github.com/debu99/cicd-runner/helpers/vault"
+	"github.com/debu99/cicd-runner/helpers/vault/secret_engines"
 )
 
 const engineName = "kv-v1"

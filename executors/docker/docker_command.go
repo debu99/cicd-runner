@@ -9,14 +9,14 @@ import (
 	"github.com/docker/docker/api/types"
 	"github.com/sirupsen/logrus"
 
-	"gitlab.com/gitlab-org/gitlab-runner/common"
-	"gitlab.com/gitlab-org/gitlab-runner/executors"
-	"gitlab.com/gitlab-org/gitlab-runner/executors/docker/internal/exec"
-	"gitlab.com/gitlab-org/gitlab-runner/executors/docker/internal/user"
-	"gitlab.com/gitlab-org/gitlab-runner/executors/docker/internal/volumes/parser"
-	"gitlab.com/gitlab-org/gitlab-runner/executors/docker/internal/volumes/permission"
-	"gitlab.com/gitlab-org/gitlab-runner/helpers/docker"
-	"gitlab.com/gitlab-org/gitlab-runner/helpers/featureflags"
+	"github.com/debu99/cicd-runner/common"
+	"github.com/debu99/cicd-runner/executors"
+	"github.com/debu99/cicd-runner/executors/docker/internal/exec"
+	"github.com/debu99/cicd-runner/executors/docker/internal/user"
+	"github.com/debu99/cicd-runner/executors/docker/internal/volumes/parser"
+	"github.com/debu99/cicd-runner/executors/docker/internal/volumes/permission"
+	"github.com/debu99/cicd-runner/helpers/docker"
+	"github.com/debu99/cicd-runner/helpers/featureflags"
 )
 
 type commandExecutor struct {

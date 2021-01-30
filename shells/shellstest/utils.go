@@ -5,8 +5,8 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"gitlab.com/gitlab-org/gitlab-runner/helpers"
-	"gitlab.com/gitlab-org/gitlab-runner/shells"
+	"github.com/debu99/cicd-runner/helpers"
+	"github.com/debu99/cicd-runner/shells"
 )
 
 type shellWriterFactory func() shells.ShellWriter

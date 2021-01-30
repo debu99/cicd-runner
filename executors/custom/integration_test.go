@@ -13,12 +13,12 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"gitlab.com/gitlab-org/gitlab-runner/common"
-	"gitlab.com/gitlab-org/gitlab-runner/common/buildtest"
-	"gitlab.com/gitlab-org/gitlab-runner/executors/custom/command"
-	"gitlab.com/gitlab-org/gitlab-runner/helpers"
-	"gitlab.com/gitlab-org/gitlab-runner/session"
-	"gitlab.com/gitlab-org/gitlab-runner/shells/shellstest"
+	"github.com/debu99/cicd-runner/common"
+	"github.com/debu99/cicd-runner/common/buildtest"
+	"github.com/debu99/cicd-runner/executors/custom/command"
+	"github.com/debu99/cicd-runner/helpers"
+	"github.com/debu99/cicd-runner/session"
+	"github.com/debu99/cicd-runner/shells/shellstest"
 )
 
 var testExecutorFile string

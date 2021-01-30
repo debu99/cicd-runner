@@ -10,8 +10,8 @@ import (
 	"runtime"
 	"strings"
 
-	"gitlab.com/gitlab-org/gitlab-runner/common"
-	"gitlab.com/gitlab-org/gitlab-runner/helpers"
+	"github.com/debu99/cicd-runner/common"
+	"github.com/debu99/cicd-runner/helpers"
 )
 
 const (

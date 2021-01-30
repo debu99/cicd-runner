@@ -9,11 +9,11 @@ import (
 	"strconv"
 	"strings"
 
-	"gitlab.com/gitlab-org/gitlab-runner/helpers/featureflags"
+	"github.com/debu99/cicd-runner/helpers/featureflags"
 
-	"gitlab.com/gitlab-org/gitlab-runner/cache"
-	"gitlab.com/gitlab-org/gitlab-runner/common"
-	"gitlab.com/gitlab-org/gitlab-runner/helpers/tls"
+	"github.com/debu99/cicd-runner/cache"
+	"github.com/debu99/cicd-runner/common"
+	"github.com/debu99/cicd-runner/helpers/tls"
 )
 
 type AbstractShell struct {

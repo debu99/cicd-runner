@@ -1,7 +1,7 @@
 package docker
 
 import (
-	"gitlab.com/gitlab-org/gitlab-runner/executors/docker/internal/volumes"
+	"github.com/debu99/cicd-runner/executors/docker/internal/volumes"
 )
 
 var createVolumesManager = func(e *executor) (volumes.Manager, error) {

@@ -6,7 +6,7 @@ import (
 	"io"
 	"os"
 
-	"gitlab.com/gitlab-org/gitlab-runner/commands/helpers/archive"
+	"github.com/debu99/cicd-runner/commands/helpers/archive"
 )
 
 func init() {

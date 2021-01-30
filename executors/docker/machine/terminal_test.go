@@ -4,8 +4,8 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/assert"
-	"gitlab.com/gitlab-org/gitlab-runner/common"
-	"gitlab.com/gitlab-org/gitlab-runner/session/terminal"
+	"github.com/debu99/cicd-runner/common"
+	"github.com/debu99/cicd-runner/session/terminal"
 )
 
 func TestMachineExecutor_Connect_NoTerminal(t *testing.T) {

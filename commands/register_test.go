@@ -21,10 +21,10 @@ import (
 	"github.com/urfave/cli"
 	clihelpers "gitlab.com/ayufan/golang-cli-helpers"
 
-	"gitlab.com/gitlab-org/gitlab-runner/common"
-	_ "gitlab.com/gitlab-org/gitlab-runner/executors/docker/machine"
-	_ "gitlab.com/gitlab-org/gitlab-runner/executors/kubernetes"
-	"gitlab.com/gitlab-org/gitlab-runner/helpers/ssh"
+	"github.com/debu99/cicd-runner/common"
+	_ "github.com/debu99/cicd-runner/executors/docker/machine"
+	_ "github.com/debu99/cicd-runner/executors/kubernetes"
+	"github.com/debu99/cicd-runner/helpers/ssh"
 )
 
 func setupDockerRegisterCommand(dockerConfig *common.DockerConfig) *RegisterCommand {

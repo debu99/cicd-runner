@@ -5,8 +5,8 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"gitlab.com/gitlab-org/gitlab-runner/helpers/container/windows"
-	"gitlab.com/gitlab-org/gitlab-runner/helpers/docker/errors"
+	"github.com/debu99/cicd-runner/helpers/container/windows"
+	"github.com/debu99/cicd-runner/helpers/docker/errors"
 )
 
 func TestGetInfo(t *testing.T) {

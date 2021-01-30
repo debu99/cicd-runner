@@ -9,7 +9,7 @@ import (
 
 	"github.com/Azure/azure-storage-blob-go/azblob"
 
-	"gitlab.com/gitlab-org/gitlab-runner/common"
+	"github.com/debu99/cicd-runner/common"
 )
 
 const DefaultAzureServer = "blob.core.windows.net"

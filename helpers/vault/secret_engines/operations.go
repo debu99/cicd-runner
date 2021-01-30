@@ -3,7 +3,7 @@ package secret_engines
 import (
 	"fmt"
 
-	"gitlab.com/gitlab-org/gitlab-runner/helpers/vault"
+	"github.com/debu99/cicd-runner/helpers/vault"
 )
 
 type OperationType string

@@ -7,9 +7,9 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"gitlab.com/gitlab-org/gitlab-runner/common"
-	"gitlab.com/gitlab-org/gitlab-runner/executors"
-	sshHelpers "gitlab.com/gitlab-org/gitlab-runner/helpers/ssh"
+	"github.com/debu99/cicd-runner/common"
+	"github.com/debu99/cicd-runner/executors"
+	sshHelpers "github.com/debu99/cicd-runner/helpers/ssh"
 )
 
 var (

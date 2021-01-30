@@ -11,7 +11,7 @@ import (
 
 	"github.com/sirupsen/logrus"
 
-	"gitlab.com/gitlab-org/gitlab-runner/helpers/certificate"
+	"github.com/debu99/cicd-runner/helpers/certificate"
 )
 
 type sessionFinderFn func(url string) *Session

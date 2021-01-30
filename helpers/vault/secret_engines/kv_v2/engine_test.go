@@ -5,7 +5,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"gitlab.com/gitlab-org/gitlab-runner/helpers/vault"
+	"github.com/debu99/cicd-runner/helpers/vault"
 )
 
 func TestEngine_EngineName(t *testing.T) {

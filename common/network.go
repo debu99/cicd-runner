@@ -6,8 +6,8 @@ import (
 	"io"
 	"time"
 
-	url_helpers "gitlab.com/gitlab-org/gitlab-runner/helpers/url"
-	"gitlab.com/gitlab-org/gitlab-runner/helpers/vault/auth_methods"
+	url_helpers "github.com/debu99/cicd-runner/helpers/url"
+	"github.com/debu99/cicd-runner/helpers/vault/auth_methods"
 )
 
 type UpdateState int

@@ -5,7 +5,7 @@ package custom
 import (
 	"errors"
 
-	terminalsession "gitlab.com/gitlab-org/gitlab-runner/session/terminal"
+	terminalsession "github.com/debu99/cicd-runner/session/terminal"
 )
 
 func (e *executor) Connect() (terminalsession.Conn, error) {

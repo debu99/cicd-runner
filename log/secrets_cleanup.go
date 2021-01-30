@@ -2,7 +2,7 @@ package log
 
 import (
 	"github.com/sirupsen/logrus"
-	url_helpers "gitlab.com/gitlab-org/gitlab-runner/helpers/url"
+	url_helpers "github.com/debu99/cicd-runner/helpers/url"
 )
 
 type SecretsCleanupHook struct{}

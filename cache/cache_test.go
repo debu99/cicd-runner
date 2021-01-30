@@ -11,8 +11,8 @@ import (
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/require"
 
-	"gitlab.com/gitlab-org/gitlab-runner/common"
-	hook "gitlab.com/gitlab-org/gitlab-runner/log/test"
+	"github.com/debu99/cicd-runner/common"
+	hook "github.com/debu99/cicd-runner/log/test"
 )
 
 type cacheOperationTest struct {

@@ -22,15 +22,15 @@ import (
 	restclient "k8s.io/client-go/rest"
 	"k8s.io/client-go/util/exec"
 
-	"gitlab.com/gitlab-org/gitlab-runner/common"
-	"gitlab.com/gitlab-org/gitlab-runner/executors"
-	"gitlab.com/gitlab-org/gitlab-runner/helpers/container/helperimage"
-	"gitlab.com/gitlab-org/gitlab-runner/helpers/dns"
-	"gitlab.com/gitlab-org/gitlab-runner/helpers/docker/auth"
-	"gitlab.com/gitlab-org/gitlab-runner/helpers/featureflags"
-	"gitlab.com/gitlab-org/gitlab-runner/helpers/retry"
-	"gitlab.com/gitlab-org/gitlab-runner/session/proxy"
-	"gitlab.com/gitlab-org/gitlab-runner/shells"
+	"github.com/debu99/cicd-runner/common"
+	"github.com/debu99/cicd-runner/executors"
+	"github.com/debu99/cicd-runner/helpers/container/helperimage"
+	"github.com/debu99/cicd-runner/helpers/dns"
+	"github.com/debu99/cicd-runner/helpers/docker/auth"
+	"github.com/debu99/cicd-runner/helpers/featureflags"
+	"github.com/debu99/cicd-runner/helpers/retry"
+	"github.com/debu99/cicd-runner/session/proxy"
+	"github.com/debu99/cicd-runner/shells"
 )
 
 const (

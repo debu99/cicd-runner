@@ -14,7 +14,7 @@ import (
 	k8net "k8s.io/apimachinery/pkg/util/net"
 	"k8s.io/client-go/rest"
 
-	"gitlab.com/gitlab-org/gitlab-runner/session/proxy"
+	"github.com/debu99/cicd-runner/session/proxy"
 )
 
 const runningState = "Running"

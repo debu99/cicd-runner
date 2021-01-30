@@ -7,7 +7,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"gitlab.com/gitlab-org/gitlab-runner/helpers/dns/test"
+	"github.com/debu99/cicd-runner/helpers/dns/test"
 )
 
 func TestMakeRFC1123Compatible(t *testing.T) {

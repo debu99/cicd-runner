@@ -15,11 +15,11 @@ import (
 	"github.com/kardianos/osext"
 	"github.com/sirupsen/logrus"
 
-	"gitlab.com/gitlab-org/gitlab-runner/common"
-	"gitlab.com/gitlab-org/gitlab-runner/executors"
-	"gitlab.com/gitlab-org/gitlab-runner/helpers"
-	"gitlab.com/gitlab-org/gitlab-runner/helpers/featureflags"
-	"gitlab.com/gitlab-org/gitlab-runner/helpers/process"
+	"github.com/debu99/cicd-runner/common"
+	"github.com/debu99/cicd-runner/executors"
+	"github.com/debu99/cicd-runner/helpers"
+	"github.com/debu99/cicd-runner/helpers/featureflags"
+	"github.com/debu99/cicd-runner/helpers/process"
 )
 
 var newProcessKillWaiter = process.NewOSKillWait

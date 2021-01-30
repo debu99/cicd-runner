@@ -10,9 +10,9 @@ import (
 	"strconv"
 	"strings"
 
-	"gitlab.com/gitlab-org/gitlab-runner/common"
-	"gitlab.com/gitlab-org/gitlab-runner/helpers"
-	"gitlab.com/gitlab-org/gitlab-runner/helpers/featureflags"
+	"github.com/debu99/cicd-runner/common"
+	"github.com/debu99/cicd-runner/helpers"
+	"github.com/debu99/cicd-runner/helpers/featureflags"
 )
 
 const BashDetectShellScript = `if [ -x /usr/local/bin/bash ]; then

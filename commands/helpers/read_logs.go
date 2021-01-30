@@ -10,7 +10,7 @@ import (
 
 	"github.com/urfave/cli"
 
-	"gitlab.com/gitlab-org/gitlab-runner/common"
+	"github.com/debu99/cicd-runner/common"
 )
 
 const (

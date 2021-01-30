@@ -20,10 +20,10 @@ import (
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/require"
 
-	"gitlab.com/gitlab-org/gitlab-runner/helpers/docker"
-	"gitlab.com/gitlab-org/gitlab-runner/helpers/featureflags"
-	"gitlab.com/gitlab-org/gitlab-runner/session"
-	"gitlab.com/gitlab-org/gitlab-runner/session/terminal"
+	"github.com/debu99/cicd-runner/helpers/docker"
+	"github.com/debu99/cicd-runner/helpers/featureflags"
+	"github.com/debu99/cicd-runner/session"
+	"github.com/debu99/cicd-runner/session/terminal"
 )
 
 func init() {

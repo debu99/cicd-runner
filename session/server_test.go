@@ -11,7 +11,7 @@ import (
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/require"
 
-	"gitlab.com/gitlab-org/gitlab-runner/helpers/certificate"
+	"github.com/debu99/cicd-runner/helpers/certificate"
 )
 
 func fakeSessionFinder(url string) *Session {

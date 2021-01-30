@@ -7,7 +7,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"gitlab.com/gitlab-org/gitlab-runner/executors/docker/internal/volumes/parser"
+	"github.com/debu99/cicd-runner/executors/docker/internal/volumes/parser"
 )
 
 type isHostMountedVolumeTestCases map[string]isHostMountedVolumeTestCase

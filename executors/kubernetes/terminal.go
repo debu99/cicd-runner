@@ -5,8 +5,8 @@ import (
 	"net/http"
 	"net/url"
 
-	"gitlab.com/gitlab-org/gitlab-runner/session/proxy"
-	terminalsession "gitlab.com/gitlab-org/gitlab-runner/session/terminal"
+	"github.com/debu99/cicd-runner/session/proxy"
+	terminalsession "github.com/debu99/cicd-runner/session/terminal"
 	terminal "gitlab.com/gitlab-org/gitlab-terminal"
 	api "k8s.io/api/core/v1"
 	"k8s.io/client-go/kubernetes/scheme"

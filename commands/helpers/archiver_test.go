@@ -5,9 +5,9 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"gitlab.com/gitlab-org/gitlab-runner/commands/helpers/archive"
-	"gitlab.com/gitlab-org/gitlab-runner/commands/helpers/archive/fastzip"
-	"gitlab.com/gitlab-org/gitlab-runner/commands/helpers/archive/ziplegacy"
+	"github.com/debu99/cicd-runner/commands/helpers/archive"
+	"github.com/debu99/cicd-runner/commands/helpers/archive/fastzip"
+	"github.com/debu99/cicd-runner/commands/helpers/archive/ziplegacy"
 )
 
 func OnEachZipArchiver(t *testing.T, f func(t *testing.T)) {

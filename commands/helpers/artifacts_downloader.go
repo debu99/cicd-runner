@@ -9,10 +9,10 @@ import (
 	"github.com/sirupsen/logrus"
 	"github.com/urfave/cli"
 
-	"gitlab.com/gitlab-org/gitlab-runner/commands/helpers/archive"
-	"gitlab.com/gitlab-org/gitlab-runner/common"
-	"gitlab.com/gitlab-org/gitlab-runner/log"
-	"gitlab.com/gitlab-org/gitlab-runner/network"
+	"github.com/debu99/cicd-runner/commands/helpers/archive"
+	"github.com/debu99/cicd-runner/common"
+	"github.com/debu99/cicd-runner/log"
+	"github.com/debu99/cicd-runner/network"
 )
 
 //nolint:lll

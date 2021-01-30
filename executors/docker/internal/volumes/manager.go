@@ -7,10 +7,10 @@ import (
 
 	"github.com/docker/docker/api/types/volume"
 
-	"gitlab.com/gitlab-org/gitlab-runner/executors/docker/internal/labels"
-	"gitlab.com/gitlab-org/gitlab-runner/executors/docker/internal/volumes/parser"
-	"gitlab.com/gitlab-org/gitlab-runner/executors/docker/internal/volumes/permission"
-	"gitlab.com/gitlab-org/gitlab-runner/helpers/docker"
+	"github.com/debu99/cicd-runner/executors/docker/internal/labels"
+	"github.com/debu99/cicd-runner/executors/docker/internal/volumes/parser"
+	"github.com/debu99/cicd-runner/executors/docker/internal/volumes/permission"
+	"github.com/debu99/cicd-runner/helpers/docker"
 )
 
 var ErrCacheVolumesDisabled = errors.New("cache volumes feature disabled")

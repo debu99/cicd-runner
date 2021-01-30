@@ -1,7 +1,7 @@
 package commands
 
 import (
-	"gitlab.com/gitlab-org/gitlab-runner/helpers"
+	"github.com/debu99/cicd-runner/helpers"
 )
 
 func getDefaultConfigDirectory() string {

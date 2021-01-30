@@ -10,7 +10,7 @@ import (
 
 	"github.com/saracen/fastzip"
 
-	"gitlab.com/gitlab-org/gitlab-runner/commands/helpers/archive"
+	"github.com/debu99/cicd-runner/commands/helpers/archive"
 )
 
 var flateLevels = map[archive.CompressionLevel]int{

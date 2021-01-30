@@ -17,14 +17,14 @@ import (
 
 	"github.com/sirupsen/logrus"
 
-	"gitlab.com/gitlab-org/gitlab-runner/helpers"
-	"gitlab.com/gitlab-org/gitlab-runner/helpers/dns"
-	"gitlab.com/gitlab-org/gitlab-runner/helpers/featureflags"
-	"gitlab.com/gitlab-org/gitlab-runner/helpers/tls"
-	"gitlab.com/gitlab-org/gitlab-runner/referees"
-	"gitlab.com/gitlab-org/gitlab-runner/session"
-	"gitlab.com/gitlab-org/gitlab-runner/session/proxy"
-	"gitlab.com/gitlab-org/gitlab-runner/session/terminal"
+	"github.com/debu99/cicd-runner/helpers"
+	"github.com/debu99/cicd-runner/helpers/dns"
+	"github.com/debu99/cicd-runner/helpers/featureflags"
+	"github.com/debu99/cicd-runner/helpers/tls"
+	"github.com/debu99/cicd-runner/referees"
+	"github.com/debu99/cicd-runner/session"
+	"github.com/debu99/cicd-runner/session/proxy"
+	"github.com/debu99/cicd-runner/session/terminal"
 )
 
 type GitStrategy int

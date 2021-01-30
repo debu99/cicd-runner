@@ -3,8 +3,8 @@ package auth_methods
 import (
 	"fmt"
 
-	"gitlab.com/gitlab-org/gitlab-runner/helpers/vault"
-	"gitlab.com/gitlab-org/gitlab-runner/helpers/vault/internal/registry"
+	"github.com/debu99/cicd-runner/helpers/vault"
+	"github.com/debu99/cicd-runner/helpers/vault/internal/registry"
 )
 
 type Factory func(path string, data Data) (vault.AuthMethod, error)

@@ -35,7 +35,7 @@ import (
 	restclient "k8s.io/client-go/rest"
 	"k8s.io/client-go/rest/fake"
 
-	"gitlab.com/gitlab-org/gitlab-runner/helpers/retry"
+	"github.com/debu99/cicd-runner/helpers/retry"
 )
 
 type fakeRemoteExecutor struct {

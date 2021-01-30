@@ -6,9 +6,9 @@ import (
 
 	"github.com/sirupsen/logrus"
 
-	"gitlab.com/gitlab-org/gitlab-runner/common"
-	_ "gitlab.com/gitlab-org/gitlab-runner/executors/docker" // Force to load docker executor
-	"gitlab.com/gitlab-org/gitlab-runner/referees"
+	"github.com/debu99/cicd-runner/common"
+	_ "github.com/debu99/cicd-runner/executors/docker" // Force to load docker executor
+	"github.com/debu99/cicd-runner/referees"
 )
 
 const (

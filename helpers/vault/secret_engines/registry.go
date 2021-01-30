@@ -3,8 +3,8 @@ package secret_engines
 import (
 	"fmt"
 
-	"gitlab.com/gitlab-org/gitlab-runner/helpers/vault"
-	"gitlab.com/gitlab-org/gitlab-runner/helpers/vault/internal/registry"
+	"github.com/debu99/cicd-runner/helpers/vault"
+	"github.com/debu99/cicd-runner/helpers/vault/internal/registry"
 )
 
 type Factory func(client vault.Client, path string) vault.SecretEngine

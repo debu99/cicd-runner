@@ -9,9 +9,9 @@ import (
 	"github.com/gorilla/websocket"
 	"github.com/sirupsen/logrus"
 
-	"gitlab.com/gitlab-org/gitlab-runner/helpers"
-	"gitlab.com/gitlab-org/gitlab-runner/session/proxy"
-	"gitlab.com/gitlab-org/gitlab-runner/session/terminal"
+	"github.com/debu99/cicd-runner/helpers"
+	"github.com/debu99/cicd-runner/session/proxy"
+	"github.com/debu99/cicd-runner/session/terminal"
 )
 
 type connectionInUseError struct{}

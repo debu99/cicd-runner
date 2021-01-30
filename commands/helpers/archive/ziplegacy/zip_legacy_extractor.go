@@ -5,8 +5,8 @@ import (
 	"context"
 	"io"
 
-	"gitlab.com/gitlab-org/gitlab-runner/commands/helpers/archive"
-	"gitlab.com/gitlab-org/gitlab-runner/helpers/archives"
+	"github.com/debu99/cicd-runner/commands/helpers/archive"
+	"github.com/debu99/cicd-runner/helpers/archives"
 )
 
 // extractor is a zip stream extractor.

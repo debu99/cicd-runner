@@ -10,7 +10,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	api "k8s.io/api/core/v1"
 
-	"gitlab.com/gitlab-org/gitlab-runner/common"
+	"github.com/debu99/cicd-runner/common"
 )
 
 type variableOverwrites map[string]string

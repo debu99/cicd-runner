@@ -3,7 +3,7 @@ package parser
 import (
 	"regexp"
 
-	"gitlab.com/gitlab-org/gitlab-runner/helpers/path"
+	"github.com/debu99/cicd-runner/helpers/path"
 )
 
 const (

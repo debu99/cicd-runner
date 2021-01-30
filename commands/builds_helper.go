@@ -7,9 +7,9 @@ import (
 	"strings"
 	"sync"
 
-	"gitlab.com/gitlab-org/gitlab-runner/common"
-	"gitlab.com/gitlab-org/gitlab-runner/helpers"
-	"gitlab.com/gitlab-org/gitlab-runner/session"
+	"github.com/debu99/cicd-runner/common"
+	"github.com/debu99/cicd-runner/helpers"
+	"github.com/debu99/cicd-runner/session"
 
 	"github.com/prometheus/client_golang/prometheus"
 )

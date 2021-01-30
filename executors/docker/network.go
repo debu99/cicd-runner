@@ -1,7 +1,7 @@
 package docker
 
 import (
-	"gitlab.com/gitlab-org/gitlab-runner/executors/docker/internal/networks"
+	"github.com/debu99/cicd-runner/executors/docker/internal/networks"
 )
 
 var createNetworksManager = func(e *executor) (networks.Manager, error) {

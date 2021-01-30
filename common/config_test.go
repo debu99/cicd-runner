@@ -10,7 +10,7 @@ import (
 	"github.com/stretchr/testify/require"
 	api "k8s.io/api/core/v1"
 
-	"gitlab.com/gitlab-org/gitlab-runner/helpers/process"
+	"github.com/debu99/cicd-runner/helpers/process"
 )
 
 func TestCacheS3Config_ShouldUseIAMCredentials(t *testing.T) {

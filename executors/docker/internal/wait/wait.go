@@ -7,8 +7,8 @@ import (
 	"time"
 
 	"github.com/docker/docker/api/types/container"
-	"gitlab.com/gitlab-org/gitlab-runner/common"
-	"gitlab.com/gitlab-org/gitlab-runner/helpers/docker"
+	"github.com/debu99/cicd-runner/common"
+	"github.com/debu99/cicd-runner/helpers/docker"
 )
 
 type Waiter interface {

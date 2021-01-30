@@ -3,8 +3,8 @@ package helperimage
 import (
 	"fmt"
 
-	"gitlab.com/gitlab-org/gitlab-runner/helpers/container/windows"
-	"gitlab.com/gitlab-org/gitlab-runner/shells"
+	"github.com/debu99/cicd-runner/helpers/container/windows"
+	"github.com/debu99/cicd-runner/shells"
 )
 
 const (

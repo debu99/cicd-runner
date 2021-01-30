@@ -17,12 +17,12 @@ import (
 	"github.com/sirupsen/logrus"
 	api "k8s.io/api/core/v1"
 
-	"gitlab.com/gitlab-org/gitlab-runner/helpers"
-	"gitlab.com/gitlab-org/gitlab-runner/helpers/docker"
-	"gitlab.com/gitlab-org/gitlab-runner/helpers/process"
-	"gitlab.com/gitlab-org/gitlab-runner/helpers/ssh"
-	"gitlab.com/gitlab-org/gitlab-runner/helpers/timeperiod"
-	"gitlab.com/gitlab-org/gitlab-runner/referees"
+	"github.com/debu99/cicd-runner/helpers"
+	"github.com/debu99/cicd-runner/helpers/docker"
+	"github.com/debu99/cicd-runner/helpers/process"
+	"github.com/debu99/cicd-runner/helpers/ssh"
+	"github.com/debu99/cicd-runner/helpers/timeperiod"
+	"github.com/debu99/cicd-runner/referees"
 )
 
 type DockerPullPolicy string

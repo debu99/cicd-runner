@@ -14,8 +14,8 @@ import (
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/require"
 
-	"gitlab.com/gitlab-org/gitlab-runner/executors/docker/internal/exec"
-	"gitlab.com/gitlab-org/gitlab-runner/helpers/docker"
+	"github.com/debu99/cicd-runner/executors/docker/internal/exec"
+	"github.com/debu99/cicd-runner/helpers/docker"
 )
 
 func TestDefaultInspect_IsRoot(t *testing.T) {

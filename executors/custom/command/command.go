@@ -8,9 +8,9 @@ import (
 	"strconv"
 	"time"
 
-	"gitlab.com/gitlab-org/gitlab-runner/common"
-	"gitlab.com/gitlab-org/gitlab-runner/executors/custom/api"
-	"gitlab.com/gitlab-org/gitlab-runner/helpers/process"
+	"github.com/debu99/cicd-runner/common"
+	"github.com/debu99/cicd-runner/executors/custom/api"
+	"github.com/debu99/cicd-runner/helpers/process"
 )
 
 const (

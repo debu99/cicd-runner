@@ -7,10 +7,10 @@ import (
 	"github.com/sirupsen/logrus"
 	"github.com/urfave/cli"
 
-	"gitlab.com/gitlab-org/gitlab-runner/common"
-	"gitlab.com/gitlab-org/gitlab-runner/log"
+	"github.com/debu99/cicd-runner/common"
+	"github.com/debu99/cicd-runner/log"
 
-	_ "gitlab.com/gitlab-org/gitlab-runner/commands/helpers"
+	_ "github.com/debu99/cicd-runner/commands/helpers"
 )
 
 func main() {

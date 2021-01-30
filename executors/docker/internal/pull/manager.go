@@ -10,9 +10,9 @@ import (
 	cli "github.com/docker/cli/cli/config/types"
 	"github.com/docker/docker/api/types"
 
-	"gitlab.com/gitlab-org/gitlab-runner/common"
-	"gitlab.com/gitlab-org/gitlab-runner/helpers/docker"
-	"gitlab.com/gitlab-org/gitlab-runner/helpers/docker/auth"
+	"github.com/debu99/cicd-runner/common"
+	"github.com/debu99/cicd-runner/helpers/docker"
+	"github.com/debu99/cicd-runner/helpers/docker/auth"
 )
 
 type Manager interface {

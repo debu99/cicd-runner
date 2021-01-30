@@ -7,7 +7,7 @@ import (
 	prometheus_go "github.com/prometheus/client_model/go"
 	"github.com/stretchr/testify/assert"
 
-	"gitlab.com/gitlab-org/gitlab-runner/common"
+	"github.com/debu99/cicd-runner/common"
 )
 
 func TestFailuresCollector_Collect_GroupingReasons(t *testing.T) {

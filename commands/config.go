@@ -9,8 +9,8 @@ import (
 
 	"github.com/sirupsen/logrus"
 
-	"gitlab.com/gitlab-org/gitlab-runner/common"
-	"gitlab.com/gitlab-org/gitlab-runner/network"
+	"github.com/debu99/cicd-runner/common"
+	"github.com/debu99/cicd-runner/network"
 )
 
 func getDefaultConfigFile() string {

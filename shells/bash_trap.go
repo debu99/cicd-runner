@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"io"
 
-	"gitlab.com/gitlab-org/gitlab-runner/common"
+	"github.com/debu99/cicd-runner/common"
 )
 
 // BashTrapShellScript is used to wrap a shell script in a trap that makes sure the script always exits

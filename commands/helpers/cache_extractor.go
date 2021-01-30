@@ -12,10 +12,10 @@ import (
 	"github.com/sirupsen/logrus"
 	"github.com/urfave/cli"
 
-	"gitlab.com/gitlab-org/gitlab-runner/commands/helpers/archive"
-	"gitlab.com/gitlab-org/gitlab-runner/common"
-	url_helpers "gitlab.com/gitlab-org/gitlab-runner/helpers/url"
-	"gitlab.com/gitlab-org/gitlab-runner/log"
+	"github.com/debu99/cicd-runner/commands/helpers/archive"
+	"github.com/debu99/cicd-runner/common"
+	url_helpers "github.com/debu99/cicd-runner/helpers/url"
+	"github.com/debu99/cicd-runner/log"
 )
 
 type CacheExtractorCommand struct {

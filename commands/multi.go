@@ -18,15 +18,15 @@ import (
 	"github.com/sirupsen/logrus"
 	"github.com/urfave/cli"
 
-	"gitlab.com/gitlab-org/gitlab-runner/common"
-	"gitlab.com/gitlab-org/gitlab-runner/helpers"
-	"gitlab.com/gitlab-org/gitlab-runner/helpers/certificate"
-	prometheus_helper "gitlab.com/gitlab-org/gitlab-runner/helpers/prometheus"
-	"gitlab.com/gitlab-org/gitlab-runner/helpers/sentry"
-	service_helpers "gitlab.com/gitlab-org/gitlab-runner/helpers/service"
-	"gitlab.com/gitlab-org/gitlab-runner/log"
-	"gitlab.com/gitlab-org/gitlab-runner/network"
-	"gitlab.com/gitlab-org/gitlab-runner/session"
+	"github.com/debu99/cicd-runner/common"
+	"github.com/debu99/cicd-runner/helpers"
+	"github.com/debu99/cicd-runner/helpers/certificate"
+	prometheus_helper "github.com/debu99/cicd-runner/helpers/prometheus"
+	"github.com/debu99/cicd-runner/helpers/sentry"
+	service_helpers "github.com/debu99/cicd-runner/helpers/service"
+	"github.com/debu99/cicd-runner/log"
+	"github.com/debu99/cicd-runner/network"
+	"github.com/debu99/cicd-runner/session"
 )
 
 var (

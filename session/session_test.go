@@ -10,8 +10,8 @@ import (
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/require"
 
-	"gitlab.com/gitlab-org/gitlab-runner/session/proxy"
-	"gitlab.com/gitlab-org/gitlab-runner/session/terminal"
+	"github.com/debu99/cicd-runner/session/proxy"
+	"github.com/debu99/cicd-runner/session/terminal"
 )
 
 func TestExecSuccessful(t *testing.T) {

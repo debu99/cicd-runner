@@ -9,7 +9,7 @@ import (
 	"path/filepath"
 	"strconv"
 
-	"gitlab.com/gitlab-org/gitlab-runner/executors/custom/api"
+	"github.com/debu99/cicd-runner/executors/custom/api"
 )
 
 const (

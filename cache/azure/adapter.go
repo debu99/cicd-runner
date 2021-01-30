@@ -9,8 +9,8 @@ import (
 
 	"github.com/sirupsen/logrus"
 
-	"gitlab.com/gitlab-org/gitlab-runner/cache"
-	"gitlab.com/gitlab-org/gitlab-runner/common"
+	"github.com/debu99/cicd-runner/cache"
+	"github.com/debu99/cicd-runner/common"
 )
 
 type signedURLGenerator func(name string, options *signedURLOptions) (*url.URL, error)
