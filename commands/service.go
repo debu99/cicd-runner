@@ -15,8 +15,8 @@ import (
 )
 
 const (
-	defaultServiceName = "gitlab-runner"
-	defaultDescription = "GitLab Runner"
+	defaultServiceName = "cicd-runner"
+	defaultDescription = "CICD Runner"
 )
 
 type NullService struct {
