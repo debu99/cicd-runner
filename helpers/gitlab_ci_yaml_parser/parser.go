@@ -381,7 +381,7 @@ func (c *GitLabCiYamlParser) ParseYaml(job *common.JobResponse) (err error) {
 
 func NewGitLabCiYamlParser(jobName string) *GitLabCiYamlParser {
 	return &GitLabCiYamlParser{
-		filename: ".gitlab-ci.yml",
+		filename: ".cicd-ci.yml",
 		jobName:  jobName,
 	}
 }
