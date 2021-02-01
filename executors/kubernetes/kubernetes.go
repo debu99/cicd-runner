@@ -51,7 +51,7 @@ var (
 		Shell: common.ShellScriptInfo{
 			Shell:         "bash",
 			Type:          common.NormalShell,
-			RunnerCommand: "/usr/bin/gitlab-runner-helper",
+			RunnerCommand: "/usr/bin/cicd-runner-helper",
 		},
 		ShowHostname: true,
 	}

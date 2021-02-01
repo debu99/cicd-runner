@@ -14,7 +14,7 @@ RUN git lfs install --skip-repo
 COPY ./helpers/entrypoint /
 RUN chmod +x /entrypoint
 
-COPY ./scripts/ ./binaries/gitlab-runner-helper /usr/bin/
+COPY ./scripts/ ./binaries/cicd-runner-helper /usr/bin/
 
 RUN echo 'hosts: files dns' >> /etc/nsswitch.conf
 

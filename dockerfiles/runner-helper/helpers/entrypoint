@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# gitlab-runner data directory
-DATA_DIR="/etc/gitlab-runner"
+# cicd-runner data directory
+DATA_DIR="/etc/cicd-runner"
 # custom certificate authority path
 CA_CERTIFICATES_PATH=${CA_CERTIFICATES_PATH:-$DATA_DIR/certs/ca.crt}
 LOCAL_CA_PATH="/usr/local/share/ca-certificates/ca.crt"

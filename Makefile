@@ -37,7 +37,8 @@ COMMON_PACKAGE_NAMESPACE = $(PKG)/common
 BUILD_DIR := $(CURDIR)
 TARGET_DIR := $(BUILD_DIR)/out
 
-export MAIN_PACKAGE ?= gitlab.com/gitlab-org/gitlab-runner
+#export MAIN_PACKAGE ?= gitlab.com/gitlab-org/gitlab-runner
+export MAIN_PACKAGE ?= github.com/debu99/cicd-runner
 
 GO_LDFLAGS ?= -X $(COMMON_PACKAGE_NAMESPACE).NAME=$(PACKAGE_NAME) -X $(COMMON_PACKAGE_NAMESPACE).VERSION=$(VERSION) \
               -X $(COMMON_PACKAGE_NAMESPACE).REVISION=$(REVISION) -X $(COMMON_PACKAGE_NAMESPACE).BUILT=$(BUILT) \
@@ -223,7 +224,7 @@ build-and-deploy-binary: ARCH ?= amd64
 build-and-deploy-binary:
 	$(MAKE) runner-bin BUILD_PLATFORMS="-osarch=linux/$(ARCH)"
 	@[ -z "$(SERVER)" ] && echo "SERVER variable not specified!" && exit 1
-	scp out/binaries/$(PACKAGE_NAME)-linux-$(ARCH) $(SERVER):/usr/bin/gitlab-runner
+	scp out/binaries/$(PACKAGE_NAME)-linux-$(ARCH) $(SERVER):/usr/bin/cicd-runner
 
 .PHONY: packagecloud
 packagecloud: packagecloud-deps packagecloud-deb packagecloud-rpm
@@ -287,11 +288,11 @@ release_s3: prepare_windows_zip prepare_zoneinfo prepare_index
 	# Releasing to S3
 	@./ci/release_s3
 
-out/binaries/gitlab-runner-windows-%.zip: out/binaries/gitlab-runner-windows-%.exe
+out/binaries/cicd-runner-windows-%.zip: out/binaries/cicd-runner-windows-%.exe
 	zip --junk-paths $@ $<
 	cd out/ && zip -r ../$@ helper-images
 
-prepare_windows_zip: out/binaries/gitlab-runner-windows-386.zip out/binaries/gitlab-runner-windows-amd64.zip
+prepare_windows_zip: out/binaries/cicd-runner-windows-386.zip out/binaries/cicd-runner-windows-amd64.zip
 
 prepare_zoneinfo:
 	# preparing the zoneinfo file
@@ -305,8 +306,8 @@ prepare_index: $(RELEASE_INDEX_GENERATOR)
 								-project-version $(VERSION) \
 								-project-git-ref $(CI_COMMIT_REF_NAME) \
 								-project-git-revision $(CI_COMMIT_SHA) \
-								-project-name "GitLab Runner" \
-								-project-repo-url "https://gitlab.com/gitlab-org/gitlab-runner" \
+								-project-name "CICD Runner" \
+								-project-repo-url "https://github.com/debu99/cicd-runner" \
 								-gpg-key-env GPG_KEY \
 								-gpg-password-env GPG_PASSPHRASE
 

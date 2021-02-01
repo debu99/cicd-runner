@@ -30,7 +30,7 @@ RUN New-Item -ItemType directory -Path C:\Temp; `
     Expand-Archive -Path git.zip -DestinationPath C:\Temp\git; `
     Expand-Archive -Path git-lfs.zip -DestinationPath C:\Temp\git-lfs
 
-COPY [".\\binaries\\gitlab-runner-helper.x86_64-windows.exe", "C:\\Temp\\gitlab-runner-helper\\gitlab-runner-helper.exe"]
+COPY [".\\binaries\\cicd-runner-helper.x86_64-windows.exe", "C:\\Temp\\cicd-runner-helper\\cicd-runner-helper.exe"]
 
 ########################################################################################################################
 
@@ -50,7 +50,7 @@ SHELL ["pwsh", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference
 # We enable `GIT_CONFIG_NOSYSTEM` and unset `include.path` in order to avoid recursive includes in the Git configuration
 # This can be removed once we move the MinGit installation out of the `C:\Program Files\git` directory. See
 # https://gitlab.com/gitlab-org/gitlab/-/issues/239013#note_401347751
-RUN [Environment]::SetEnvironmentVariable('Path', $env:Path + ';C:\Program Files\git\cmd;C:\Program Files\git-lfs;C:\Program Files\gitlab-runner-helper', [EnvironmentVariableTarget]::Machine); `
+RUN [Environment]::SetEnvironmentVariable('Path', $env:Path + ';C:\Program Files\git\cmd;C:\Program Files\git-lfs;C:\Program Files\cicd-runner-helper', [EnvironmentVariableTarget]::Machine); `
     $env:Path = [System.Environment]::GetEnvironmentVariable('Path', 'Machine'); `
     $env:GIT_CONFIG_NOSYSTEM=1; `
     & $env:ProgramFiles\git\cmd\git.exe config --system --unset-all include.path; `

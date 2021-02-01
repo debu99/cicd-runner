@@ -14,15 +14,17 @@ const (
 	// DockerHubWarningMessage is the message that is printed to the user when
 	// it's using the helper image hosted in Docker Hub. It is up to the caller
 	// to print this message.
-	DockerHubWarningMessage = "Pulling GitLab Runner helper image from Docker Hub. " +
-		"Helper image is migrating to registry.gitlab.com, " +
-		"for more information see " +
-		"https://docs.gitlab.com/runner/configuration/advanced-configuration.html#migrating-helper-image-to-registrygitlabcom"
+	DockerHubWarningMessage = "Pulling CICD Runner helper image from Docker Hub. " +
+		//"Helper image is migrating to registry.gitlab.com, " +
+		//"for more information see " +
+		//"https://docs.gitlab.com/runner/configuration/advanced-configuration.html#migrating-helper-image-to-registrygitlabcom"
 
 	// DockerHubName is the name of the helper image hosted in Docker Hub.
-	DockerHubName = "gitlab/gitlab-runner-helper"
+	//DockerHubName = "gitlab/gitlab-runner-helper"
+        DockerHubName = "debu99/cicd-runner-helper"
 	// GitLabRegistryName is the name of the helper image hosted in registry.gitlab.com.
-	GitLabRegistryName = "registry.gitlab.com/gitlab-org/gitlab-runner/gitlab-runner-helper"
+	//GitLabRegistryName = "registry.gitlab.com/gitlab-org/gitlab-runner/gitlab-runner-helper"
+        GitLabRegistryName = "debu99/cicd-runner-helper"
 
 	headRevision        = "HEAD"
 	latestImageRevision = "latest"

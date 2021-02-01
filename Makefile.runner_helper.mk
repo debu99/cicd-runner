@@ -1,7 +1,7 @@
 # -------------------------------------------------------------------------------
 # The following make file does two things:
-#   1. Create binaries for the gitlab-runner-helper app which can be found in
-#   `./apps/gitlab-runner-helper` for all the platforms we want to support.
+#   1. Create binaries for the cicd-runner-helper app which can be found in
+#   `./apps/cicd-runner-helper` for all the platforms we want to support.
 #   2. Create Linux containers and extract their file system to be used later to
 #   build/publish.
 #
@@ -23,7 +23,7 @@ TAR_XZ += ${BASE_TAR_PATH}-s390x.tar.xz
 
 # Binaries that we support for the helper image. We are using the following
 # pattern match:
-# out/binaries/gitlab-runner-helper/gitlab-runner-helper.{{arch}}-{{os}}, these should
+# out/binaries/cicd-runner-helper/cicd-runner-helper.{{arch}}-{{os}}, these should
 # match up with GO_ARCH_* variables names. Note that Linux is implied by
 # default.
 BASE_BINARY_PATH := out/binaries/cicd-runner-helper/cicd-runner-helper
@@ -63,7 +63,7 @@ _helper-dockerarchive-host: ${BASE_TAR_PATH}-$(shell uname -m)$(IMAGE_VARIANT_SU
 	@ # See https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/2058#note_388341301
 	docker import ${BASE_TAR_PATH}-$(shell uname -m)$(IMAGE_VARIANT_SUFFIX).tar.xz \
 		--change "ENTRYPOINT [\"/usr/bin/dumb-init\", \"/entrypoint\"]" \
-		gitlab/gitlab-runner-helper:$(shell uname -m)-$(REVISION)$(IMAGE_VARIANT_SUFFIX)
+		debu99/cicd-runner-helper:$(shell uname -m)-$(REVISION)$(IMAGE_VARIANT_SUFFIX)
 
 .PHONY: helper-dockerarchive-host
 helper-dockerarchive-host:
