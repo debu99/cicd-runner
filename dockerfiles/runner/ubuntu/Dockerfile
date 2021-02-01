@@ -26,6 +26,6 @@ COPY entrypoint /
 RUN chmod +x /entrypoint
 
 STOPSIGNAL SIGQUIT
-VOLUME ["/etc/gitlab-runner", "/home/gitlab-runner"]
+VOLUME ["/etc/cicd-runner", "/home/cicd-runner"]
 ENTRYPOINT ["/usr/bin/dumb-init", "/entrypoint"]
-CMD ["run", "--user=gitlab-runner", "--working-directory=/home/gitlab-runner"]
+CMD ["run", "--user=cicd-runner", "--working-directory=/home/cicd-runner"]

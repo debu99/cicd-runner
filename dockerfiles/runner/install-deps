@@ -35,10 +35,10 @@ esac;
 
 "${SCRIPTPATH}/install-gitlab-runner" "${ARCH}"
 rm "${SCRIPTPATH}/install-gitlab-runner"
-gitlab-runner --version
+cicd-runner --version
 
-mkdir -p /etc/gitlab-runner/certs
-chmod -R 700 /etc/gitlab-runner
+mkdir -p /etc/cicd-runner/certs
+chmod -R 700 /etc/cicd-runner
 
 if grep 'docker-machine' "${SCRIPTPATH}/checksums-${ARCH}"; then
   wget -nv "https://github.com/docker/machine/releases/download/v${DOCKER_MACHINE_VERSION}/docker-machine-Linux-${DOCKER_MACHINE_ARCH}" -O /usr/bin/docker-machine

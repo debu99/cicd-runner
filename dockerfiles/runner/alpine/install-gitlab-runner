@@ -4,7 +4,7 @@ set -e
 
 ARCH="$1"
 
-mv "/usr/bin/gitlab-runner-linux-${ARCH}" /usr/bin/gitlab-runner
+mv "/usr/bin/cicd-runner-linux-${ARCH}" /usr/bin/cicd-runner
 
-chmod +x /usr/bin/gitlab-runner
-ln -s /usr/bin/gitlab-runner /usr/bin/gitlab-ci-multi-runner
+chmod +x /usr/bin/cicd-runner
+ln -s /usr/bin/cicd-runner /usr/bin/cicd-ci-multi-runner
