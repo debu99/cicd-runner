@@ -2,7 +2,7 @@ FROM alpine:3.12.0
 
 ARG TARGETPLATFORM
 
-RUN adduser -D -S -h /home/gitlab-runner gitlab-runner
+RUN adduser -D -S -h /home/cicd-runner cicd-runner
 
 # hadolint ignore=DL3018
 RUN apk add --no-cache \
@@ -17,7 +17,7 @@ ARG DUMB_INIT_VERSION
 ARG GIT_LFS_VERSION
 
 COPY cicd-runner-linux-* /usr/bin/
-COPY checksums-* install-deps install-gitlab-runner /tmp/
+COPY checksums-* install-deps install-cicd-runner /tmp/
 
 # Install GNU wget for "-nv" flag support
 # hadolint ignore=DL3018
@@ -29,6 +29,6 @@ COPY entrypoint /
 RUN chmod +x /entrypoint
 
 STOPSIGNAL SIGQUIT
-VOLUME ["/etc/gitlab-runner", "/home/gitlab-runner"]
+VOLUME ["/etc/cicd-runner", "/home/cicd-runner"]
 ENTRYPOINT ["/usr/bin/dumb-init", "/entrypoint"]
-CMD ["run", "--user=gitlab-runner", "--working-directory=/home/gitlab-runner"]
+CMD ["run", "--user=cicd-runner", "--working-directory=/home/cicd-runner"]

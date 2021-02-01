@@ -45,12 +45,12 @@ create_package() {
         --output-type "${packageType}" \
         \
         --name "${PACKAGE_NAME}" \
-        --description "GitLab Runner" \
+        --description "CICD Runner" \
         --version "${VERSION}" \
-        --url https://gitlab.com/gitlab-org/gitlab-runner \
-        --maintainer "GitLab Inc. <support@gitlab.com>" \
+        --url https://github.com/debu99/cicd-runner \
+        --maintainer "Clix.dev <support@clix.dev>" \
         --license "MIT" \
-        --vendor "GitLab Inc." \
+        --vendor "Clix.dev" \
         --architecture "${PACKAGE_ARCH}" \
         \
         --conflicts "${PACKAGE_NAME}-beta" \

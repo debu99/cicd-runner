@@ -8,8 +8,8 @@ package-deps:
 
 .PHONY: package-prepare
 package-prepare:
-	chmod 755 packaging/root/usr/share/gitlab-runner/
-	chmod 755 packaging/root/usr/share/gitlab-runner/*
+	chmod 755 packaging/root/usr/share/cicd-runner/
+	chmod 755 packaging/root/usr/share/cicd-runner/*
 
 .PHONY: package-deb
 package-deb: package-deps package-prepare

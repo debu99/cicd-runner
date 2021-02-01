@@ -19,7 +19,8 @@ ARG DOCKER_MACHINE_VERSION
 ARG DUMB_INIT_VERSION
 ARG GIT_LFS_VERSION
 
-COPY cicd-runner_*.deb checksums-* install-deps install-gitlab-runner /tmp/
+COPY cicd-runner-linux-* /usr/bin/
+COPY checksums-* install-deps install-cicd-runner /tmp/
 RUN /tmp/install-deps "${TARGETPLATFORM}" "${DOCKER_MACHINE_VERSION}" "${DUMB_INIT_VERSION}" "${GIT_LFS_VERSION}"
 
 COPY entrypoint /
