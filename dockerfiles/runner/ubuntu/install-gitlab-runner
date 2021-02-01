@@ -10,4 +10,4 @@ apt-get -f install -y
 rm -rf /var/lib/apt/lists/*
 rm "/tmp/cicd-runner_${ARCH}.deb"
 # TODO: Remove in 14.0 https://gitlab.com/gitlab-org/gitlab-runner/-/issues/4845
-rm "/home/cicd-runner/.bash_logout"
+rm -f "/home/cicd-runner/.bash_logout" || true
