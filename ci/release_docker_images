@@ -123,6 +123,7 @@ buildx() {
         "${tagOpts[@]}" \
         "${buildxFlags[@]}" \
         "${contextPath}"
+    echo "Tag is -- ${tagOpts[@]}"
     trap - ERR SIGINT SIGTERM
     cleanup_docker_context
 
