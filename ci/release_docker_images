@@ -310,8 +310,8 @@ if [[ "${PUBLISH_IMAGES}" == "true" ]] && [[ "${PUSH_TO_ECR_PUBLIC}" == "true" ]
    add_tags ubuntuTags "ubuntu" "${ECR_PUBLIC_USER}" "${ECR_PUBLIC_PASSWORD}" "${ECR_PUBLIC_REGISTRY}/gitlab-runner" "${ref_tag}"
 fi
 
-add_tags alpineTags "debu99/cicd-runner:alpine-latest"
-add_tags ubuntuTags "debu99/cicd-runner:ubuntu-latest"
+alpineTags+=("debu99/cicd-runner:alpine-latest")
+ubuntuTags+=("debu99/cicd-runner:ubuntu-latest")
 
 # Build and publish multi-platform images using `docker buildx`
 buildx "${runner_home_dir}/ubuntu" "${ubuntuTags[@]}"
