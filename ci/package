@@ -54,10 +54,10 @@ create_package() {
         --architecture "${PACKAGE_ARCH}" \
         \
         --conflicts "${PACKAGE_NAME}-beta" \
-        --conflicts gitlab-ci-multi-runner \
-        --conflicts gitlab-ci-multi-runner-beta \
-        --provides gitlab-ci-multi-runner \
-        --replaces gitlab-ci-multi-runner \
+        --conflicts cicd-ci-multi-runner \
+        --conflicts cicd-ci-multi-runner-beta \
+        --provides cicd-ci-multi-runner \
+        --replaces cicd-ci-multi-runner \
         \
         --depends git \
         --depends curl \
@@ -69,8 +69,8 @@ create_package() {
         --before-remove "packaging/scripts/prerm.${packageType}" \
         \
         packaging/root/=/ \
-        "${RUNNER_BINARY}=/usr/bin/gitlab-runner" \
-        out/helper-images/=/usr/lib/gitlab-runner/helper-images/
+        "${RUNNER_BINARY}=/usr/bin/cicd-runner" \
+        out/helper-images/=/usr/lib/cicd-runner/helper-images/
 }
 
 create_deb() {
