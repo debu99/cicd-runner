@@ -274,7 +274,7 @@ spec:
       serviceAccountName: cicd-runner
       containers:
       - name: cicd-runner
-        image: debu99/debu99-runner:alpine-latest
+        image: debu99/cicd-runner:alpine-latest
         imagePullPolicy: "IfNotPresent"
         lifecycle:
           preStop:
