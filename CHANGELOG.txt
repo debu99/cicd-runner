@@ -1,0 +1,43 @@
+
+apt update && apt install -y wget curl docker.io screen
+echo $'{\n    "experimental": true\n}' | tee /etc/docker/daemon.json;
+mkdir -p ~/.docker/cli-plugins/
+echo '{ "experimental": "enabled" }' > ~/.docker/config.json
+export DOCKER_CLI_EXPERIMENTAL=enabled
+systemctl restart docker
+docker version
+
+wget https://github.com/docker/buildx/releases/download/v0.2.0/buildx-v0.2.0.linux-amd64
+mv buildx-v0.2.0.linux-amd64 ~/.docker/cli-plugins/docker-buildx
+chmod +x ~/.docker/cli-plugins/docker-buildx
+export DOCKER_BUILDKIT=1
+docker buildx ls
+
+apt-get install -y mercurial git-core wget make build-essential rubygems ruby-dev
+wget https://storage.googleapis.com/golang/go1.13.8.linux-amd64.tar.gz
+tar -C /usr/local -xzf go*-*.tar.gz
+
+export PATH=$PATH:/usr/local/go/bin:/root/go/bin/
+git clone https://github.com/debu99/cicd-runner
+cd cicd-runner
+
+make runner-and-helper-bin-host
+make runner-and-helper-docker-host
+make test
+
+curl -L --output ./gitlab-runner-origin "https://gitlab-runner-downloads.s3.amazonaws.com/latest/binaries/gitlab-runner-linux-amd64"
+chmod +x ./gitlab-runner-origin
+export DEBUG=true
+export LOG_LEVEL=debug
+
+out/binaries/register
+
+0. import library
+find . -type f -name '*.go' -exec sed -i '' 's|"gitlab.com/gitlab-org/gitlab-runner/|"github.com/debu99/cicd-runner/|g' {} \;
+
+
+1. command line 
+
+2. logs
+
+3. .gitlab-ci.yml
