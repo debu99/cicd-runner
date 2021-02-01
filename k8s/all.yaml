@@ -1,5 +1,5 @@
 ---
-# Source: gitlab-runner/templates/service-account.yaml
+# Source: cicd-runner/templates/service-account.yaml
 apiVersion: v1
 kind: ServiceAccount
 metadata:
@@ -11,7 +11,7 @@ metadata:
     release: "cicd-runner"
     heritage: "Helm"
 ---
-# Source: gitlab-runner/templates/secrets.yaml
+# Source: cicd-runner/templates/secrets.yaml
 apiVersion: v1
 kind: Secret
 metadata:
@@ -26,7 +26,7 @@ data:
   runner-registration-token: "FAKE-TOKEN"
   runner-token: ""
 ---
-# Source: gitlab-runner/templates/configmap.yaml
+# Source: cicd-runner/templates/configmap.yaml
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -124,7 +124,7 @@ data:
 
   pre-entrypoint-script: |
 ---
-# Source: gitlab-runner/templates/role.yaml
+# Source: cicd-runner/templates/role.yaml
 apiVersion: rbac.authorization.k8s.io/v1
 kind: "Role"
 metadata:
@@ -139,7 +139,7 @@ rules:
   resources: ["*"]
   verbs: ["*"]
 ---
-# Source: gitlab-runner/templates/role-binding.yaml
+# Source: cicd-runner/templates/role-binding.yaml
 apiVersion: rbac.authorization.k8s.io/v1
 kind: "RoleBinding"
 metadata:
@@ -156,9 +156,9 @@ roleRef:
 subjects:
 - kind: ServiceAccount
   name: cicd-runner
-  namespace: "gitlab"
+  namespace: "cicd"
 ---
-# Source: gitlab-runner/templates/deployment.yaml
+# Source: cicd-runner/templates/deployment.yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -193,7 +193,7 @@ spec:
       initContainers:
       - name: configure
         command: ['sh', '/config/configure']
-        image: gitlab/gitlab-runner:alpine-v13.4.1
+        image: debu99/cicd-runner:alpine-latest
         imagePullPolicy: "IfNotPresent"
         env:
 
@@ -218,7 +218,7 @@ spec:
           value: "true"
 
         - name: KUBERNETES_NAMESPACE
-          value: "gitlab"
+          value: "cicd"
         - name: KUBERNETES_POLL_TIMEOUT
           value: "180"
         - name: KUBERNETES_CPU_LIMIT
@@ -304,7 +304,7 @@ spec:
           value: "true"
 
         - name: KUBERNETES_NAMESPACE
-          value: "gitlab"
+          value: "cicd"
         - name: KUBERNETES_POLL_TIMEOUT
           value: "180"
         - name: KUBERNETES_CPU_LIMIT
@@ -377,7 +377,7 @@ spec:
       - name: runner-secrets
         emptyDir:
           medium: "Memory"
-      - name: etc-gitlab-runner
+      - name: etc-cicd-runner
         emptyDir:
           medium: "Memory"
       - name: init-runner-secrets
