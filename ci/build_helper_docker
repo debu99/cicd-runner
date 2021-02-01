@@ -61,15 +61,15 @@ case "${TARGET_ARCH}" in
         ;;
 esac
 
-binary_file="out/binaries/gitlab-runner-helper/gitlab-runner-helper.${TARGET_ARCH}"
+binary_file="out/binaries/cicd-runner-helper/cicd-runner-helper.${TARGET_ARCH}"
 
 if [ ! -f "$binary_file" ]; then
     echo -e "${RED}Missing binary file. You probably need to run 'make helper-bin'.${RST}"
     exit 1
 fi
 
-cp "$binary_file" dockerfiles/runner-helper/binaries/gitlab-runner-helper
-chmod +x dockerfiles/runner-helper/binaries/gitlab-runner-helper
+cp "$binary_file" dockerfiles/runner-helper/binaries/cicd-runner-helper
+chmod +x dockerfiles/runner-helper/binaries/cicd-runner-helper
 
 os=$(_docker version -f '{{.Server.Os}}')
 platform="${os}/${platform_arch}"

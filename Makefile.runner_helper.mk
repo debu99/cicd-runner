@@ -26,7 +26,7 @@ TAR_XZ += ${BASE_TAR_PATH}-s390x.tar.xz
 # out/binaries/gitlab-runner-helper/gitlab-runner-helper.{{arch}}-{{os}}, these should
 # match up with GO_ARCH_* variables names. Note that Linux is implied by
 # default.
-BASE_BINARY_PATH := out/binaries/gitlab-runner-helper/gitlab-runner-helper
+BASE_BINARY_PATH := out/binaries/cicd-runner-helper/cicd-runner-helper
 BINARIES := ${BASE_BINARY_PATH}.x86_64-windows
 BINARIES += ${BASE_BINARY_PATH}.x86_64
 BINARIES += ${BASE_BINARY_PATH}.arm
@@ -54,7 +54,7 @@ helper-bin-host: ${BASE_BINARY_PATH}.$(shell uname -m)
 helper-bin: $(BINARIES)
 
 ${BASE_BINARY_PATH}.%: $(HELPER_GO_FILES) $(GOX)
-	$(GOX) -osarch=$(GO_ARCH_$*) -ldflags "$(GO_LDFLAGS)" -output=$@ $(PKG)/apps/gitlab-runner-helper
+	$(GOX) -osarch=$(GO_ARCH_$*) -ldflags "$(GO_LDFLAGS)" -output=$@ $(PKG)/apps/cicd-runner-helper
 
 # Build the Runner Helper tar files for host platform.
 .PHONY: _helper-dockerarchive-host
