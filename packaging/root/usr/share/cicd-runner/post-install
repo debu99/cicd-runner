@@ -1,0 +1,66 @@
+#!/bin/sh
+
+set -e
+
+# detect user: first try to use gitlab_ci_multi_runner
+for USER in cicd_ci_multi_runner cicd-runner; do
+  if id -u "$USER" >/dev/null 2>/dev/null; then
+    echo "GitLab Runner: detected user $USER"
+    break
+  fi
+done
+
+# Disable
+# [skel](https://www.thegeekdiary.com/understanding-the-etc-skel-directory-in-linux/)
+# for distributions like Debian buster
+# https://gitlab.com/gitlab-org/cicd-runner/-/issues/1379
+GITLAB_RUNNER_DISABLE_SKEL=${GITLAB_RUNNER_DISABLE_SKEL:-false}
+
+# create user if doesn't exist: it will create cicd-runner if not found
+if ! id -u "$USER" >/dev/null 2>/dev/null; then
+  echo "GitLab Runner: creating $USER..."
+
+  if [ $GITLAB_RUNNER_DISABLE_SKEL = true ]; then
+    echo "Home directory skeleton not used"
+    useradd --system --shell /bin/bash --comment 'CICD Runner' --create-home --skel /dev/null $USER
+  else
+    useradd --system --shell /bin/bash --comment 'CICD Runner' --create-home $USER
+  fi
+fi
+
+# add user to docker group to allow Docker access (insecure)
+if id -nG "$USER" | grep -q docker; then
+  echo "WARNING: $USER belongs to group docker which is insecure, because allows to have root access to host"
+fi
+
+# get USER home directory
+eval HOMEDIR=~$USER
+
+# create empty config and re-register runner
+mkdir -p /etc/cicd-runner
+chmod 0700 /etc/cicd-runner
+if [ -f $HOMEDIR/config.toml ] && [ ! -f /etc/cicd-runner/config.toml ]; then
+  echo "GitLab Runner: importing configuration to /etc/cicd-runner/config.toml"
+  cp $HOMEDIR/config.toml /etc/cicd-runner/config.toml
+  chmod 0600 /etc/cicd-runner/config.toml
+fi
+
+# uninstall old service
+if cicd-runner status --service="cicd-runner"; then
+  cicd-runner stop --service="cicd-runner" >/dev/null 2>/dev/null || :
+  cicd-runner uninstall --service="cicd-runner" >/dev/null 2>/dev/null || :
+fi
+
+# if migrating from pre 10.0.0 installation
+if cicd-runner status --service="cicd-ci-multi-runner"; then
+  cicd-runner stop --service="cicd-ci-multi-runner" >/dev/null 2>/dev/null || :
+  cicd-runner uninstall --service="cicd-ci-multi-runner" >/dev/null 2>/dev/null || :
+fi
+
+# re-register runner
+cicd-runner stop >/dev/null 2>/dev/null || :
+cicd-runner uninstall >/dev/null 2>/dev/null || :
+cicd-runner install --user=$USER --working-directory=$HOMEDIR
+
+# start runner service
+cicd-runner start || :

@@ -1,0 +1,5 @@
+#!/bin/sh
+
+cicd-runner stop >/dev/null 2>/dev/null
+cicd-runner uninstall >/dev/null 2>/dev/null
+exit 0
