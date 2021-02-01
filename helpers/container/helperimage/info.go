@@ -14,7 +14,7 @@ const (
 	// DockerHubWarningMessage is the message that is printed to the user when
 	// it's using the helper image hosted in Docker Hub. It is up to the caller
 	// to print this message.
-	DockerHubWarningMessage = "Pulling CICD Runner helper image from Docker Hub. " +
+	DockerHubWarningMessage = "Pulling CICD Runner helper image from Docker Hub. " 
 		//"Helper image is migrating to registry.gitlab.com, " +
 		//"for more information see " +
 		//"https://docs.gitlab.com/runner/configuration/advanced-configuration.html#migrating-helper-image-to-registrygitlabcom"
