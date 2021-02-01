@@ -113,6 +113,7 @@ buildx() {
 
     local formatted_platforms
     formatted_platforms=$(join_by , "${platforms[@]}")
+    echo "Tag is -- ${tagOpts[@]}"
     _docker_buildx build \
         --build-arg DOCKER_MACHINE_VERSION="${DOCKER_MACHINE_VERSION}" \
         --build-arg DUMB_INIT_VERSION="${DUMB_INIT_VERSION}" \
