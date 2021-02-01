@@ -256,7 +256,7 @@ spec:
         - name: KUBERNETES_HELPER_MEMORY_REQUEST
           value: ""
         - name: KUBERNETES_HELPER_IMAGE
-          value: ""
+          value: "debu99/cicd-runner-helper:alpine-latest"
         - name: KUBERNETES_PULL_POLICY
           value: ""
         volumeMounts:
@@ -282,7 +282,10 @@ spec:
               command: ["/entrypoint", "unregister", "--all-runners"]
         command: ["/bin/bash", "/scripts/entrypoint"]
         env:
-
+        - name: DEBUG
+          value: "true"
+        - name: LOG_LEVEL
+          value: "debug"
         - name: CI_SERVER_URL
           value: "https://gitlab.com/"
         - name: CLONE_URL
@@ -342,7 +345,7 @@ spec:
         - name: KUBERNETES_HELPER_MEMORY_REQUEST
           value: ""
         - name: KUBERNETES_HELPER_IMAGE
-          value: ""
+          value: "debu99/cicd-runner-helper:alpine-latest"
         - name: KUBERNETES_PULL_POLICY
           value: ""
         livenessProbe:
