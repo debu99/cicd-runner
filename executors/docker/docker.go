@@ -100,7 +100,7 @@ func init() {
 	runnerFolder, err := osext.ExecutableFolder()
 	if err != nil {
 		logrus.Errorln(
-			"Docker executor: unable to detect gitlab-runner folder, "+
+			"Docker executor: unable to detect cicd-runner folder, "+
 				"prebuilt image helpers will be loaded from remote registry.",
 			err,
 		)
@@ -120,7 +120,7 @@ func init() {
 		// as part of the packaging done in the create_package function in ci/package
 		PrebuiltImagesPaths = append(
 			PrebuiltImagesPaths,
-			filepath.Join(runnerFolder, "../lib/gitlab-runner/helper-images"),
+			filepath.Join(runnerFolder, "../lib/cicd-runner/helper-images"),
 		)
 	}
 }
@@ -1133,7 +1133,7 @@ func (e *executor) runServiceHealthCheckContainer(service *types.Container, time
 		return err
 	}
 
-	cmd := []string{"gitlab-runner-helper", "health-check"}
+	cmd := []string{"cicd-runner-helper", "health-check"}
 
 	config := e.createConfigForServiceHealthCheckContainer(service, cmd, waitImage, environment)
 	hostConfig := e.createHostConfigForServiceHealthCheck(service)

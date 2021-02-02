@@ -16,7 +16,7 @@ func init() {
 		Shell: common.ShellScriptInfo{
 			Shell:         "powershell",
 			Type:          common.NormalShell,
-			RunnerCommand: "gitlab-runner-helper",
+			RunnerCommand: "cicd-runner-helper",
 		},
 		ShowHostname: true,
 		Metadata: map[string]string{

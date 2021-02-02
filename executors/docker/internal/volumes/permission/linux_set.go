@@ -13,7 +13,7 @@ import (
 	"github.com/debu99/cicd-runner/helpers/docker"
 )
 
-const dstMount = "/gitlab-runner-cache-init"
+const dstMount = "/cicd-runner-cache-init"
 
 type dockerLinuxSetter struct {
 	client      docker.Client
@@ -75,7 +75,7 @@ func (d *dockerLinuxSetter) createContainer(
 
 	config := &container.Config{
 		Image:  d.helperImage.ID,
-		Cmd:    []string{"gitlab-runner-helper", "cache-init", dstMount},
+		Cmd:    []string{"cicd-runner-helper", "cache-init", dstMount},
 		Labels: labels,
 	}
 

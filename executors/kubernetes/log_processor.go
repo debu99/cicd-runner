@@ -36,7 +36,7 @@ func (s *kubernetesLogStreamer) Stream(ctx context.Context, offset int64, output
 		ContainerName: s.container,
 		Stdin:         false,
 		Command: []string{
-			"gitlab-runner-helper",
+			"cicd-runner-helper",
 			"read-logs",
 			"--path",
 			s.logPath,
