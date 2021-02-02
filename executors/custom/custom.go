@@ -270,7 +270,8 @@ func (e *executor) Run(cmd common.ExecutorCommand) error {
 	stage := cmd.Stage
 	if stage == "step_script" {
 		e.BuildLogger.Warningln("Starting with version 14.0 the 'build_script' stage " +
-			"will be replaced with 'step_script': https://gitlab.com/gitlab-org/gitlab-runner/-/issues/26426")
+                        "will be replaced with 'step_script'")
+			//"will be replaced with 'step_script': https://gitlab.com/gitlab-org/gitlab-runner/-/issues/26426")
 		stage = "build_script"
 	}
 
@@ -332,7 +333,7 @@ func init() {
 		Shell: common.ShellScriptInfo{
 			Shell:         common.GetDefaultShell(),
 			Type:          common.NormalShell,
-			RunnerCommand: "gitlab-runner",
+			RunnerCommand: "cicd-runner",
 		},
 		ShowHostname: false,
 	}

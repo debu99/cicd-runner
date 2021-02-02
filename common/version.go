@@ -8,7 +8,7 @@ import (
 	"github.com/urfave/cli"
 )
 
-var NAME = "gitlab-runner"
+var NAME = "cicd-runner"
 var VERSION = "development version"
 var REVISION = "HEAD"
 var BRANCH = "HEAD"

@@ -367,7 +367,7 @@ func (s *RegisterCommand) Execute(context *cli.Context) {
 	validAccessLevels := []AccessLevel{NotProtected, RefProtected}
 	if !accessLevelValid(validAccessLevels, AccessLevel(s.AccessLevel)) {
 		logrus.Panicln("Given access-level is not valid. " +
-			"Refer to gitlab-runner register -h for the correct options.")
+			"Refer to cicd-runner register -h for the correct options.")
 	}
 
 	s.askRunner()

@@ -7,7 +7,7 @@ import (
 	"github.com/debu99/cicd-runner/common"
 )
 
-const dockerLabelPrefix = "com.gitlab.gitlab-runner"
+const dockerLabelPrefix = "dev.clix.cicd-runner"
 
 // Labeler is responsible for handling labelling logic for docker entities - networks, containers.
 type Labeler interface {

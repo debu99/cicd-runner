@@ -94,7 +94,7 @@ func init() {
 		Shell: common.ShellScriptInfo{
 			Shell:         "bash",
 			Type:          common.LoginShell,
-			RunnerCommand: "gitlab-runner",
+			RunnerCommand: "cicd-runner",
 		},
 		ShowHostname: true,
 		Metadata: map[string]string{
