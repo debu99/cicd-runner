@@ -55,7 +55,7 @@ var flags = []FeatureFlag{
 		Deprecated:      false,
 		ToBeRemovedWith: "",
 		Description: "When set to `false` disables execution of remote Kubernetes commands through `exec` in " +
-			"favor of `attach` to solve problems like " +
+			"favor of `attach` to solve problems" 
 			//"[#4119](https://gitlab.com/gitlab-org/gitlab-runner/-/issues/4119)",
 	},
 	{
