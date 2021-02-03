@@ -23,7 +23,7 @@ import (
 const clientError = -100
 
 var apiRequestStatuses = prometheus.NewDesc(
-	"gitlab_runner_api_request_statuses_total",
+	"cicd_runner_api_request_statuses_total",
 	"The total number of api requests, partitioned by runner, endpoint and status.",
 	[]string{"runner", "endpoint", "status"},
 	nil,

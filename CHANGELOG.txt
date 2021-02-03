@@ -17,13 +17,38 @@ apt-get install -y mercurial git-core wget make build-essential rubygems ruby-de
 wget https://storage.googleapis.com/golang/go1.13.8.linux-amd64.tar.gz
 tar -C /usr/local -xzf go*-*.tar.gz
 
-export PATH=$PATH:/usr/local/go/bin:/root/go/bin/
 git clone https://github.com/debu99/cicd-runner
 cd cicd-runner
 
-make runner-and-helper-bin-host
+export PATH=$PATH:/usr/local/go/bin:/root/go/bin/
 make runner-and-helper-docker-host
+make runner-and-helper-bin-host
 make test
+
+
+docker run --rm -it -v $HOME/:/etc/cicd-runner debu99/cicd-runner:alpine-latest register
+#privileged = true
+docker run -v $HOME/:/etc/cicd-runner -d --name cicd-runner -e DEBUG=true -e LOG_LEVEL=debug -v /var/run/docker.sock:/var/run/docker.sock debu99/cicd-runner:alpine-latest
+
+
+
+
+docker run -v $HOME/:/etc/gitlab-runner -e DEBUG=true -e LOG_LEVEL=debug -v /var/run/docker.sock:/var/run/docker.sock gitlab/gitlab-runner:latest
+
+
+docker run --rm -it -v $HOME:/etc/cicd-runner debu99/cicd-runner:alpine-latest register -n \
+       --url $GITLAB_URL \
+       --registration-token $REGISTRATION_TOKEN \
+       --executor docker \
+       --description $RUNNER_NAME \
+       --run-untagged="true" \
+       --locked="false" \
+       --docker-privileged \
+       --docker-image "docker:dind" \
+       --builds-dir /builds
+
+
+
 
 curl -L --output ./gitlab-runner-origin "https://gitlab-runner-downloads.s3.amazonaws.com/latest/binaries/gitlab-runner-linux-amd64"
 chmod +x ./gitlab-runner-origin
