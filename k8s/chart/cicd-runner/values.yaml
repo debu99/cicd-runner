@@ -1,0 +1,96 @@
+image: debu99/cicd-runner:alpine-latest
+imagePullPolicy: Always
+# imagePullSecrets: 
+#   - name: "image-pull-secret"
+
+gitlabUrl: "https://gitlab.com/"
+# gitlabUrl: http://gitlab.your-domain.com/
+
+
+runnerRegistrationToken: "FAKE-TOKEN"
+runnerToken: ""
+
+unregisterRunners: true
+terminationGracePeriodSeconds: 3600
+# certsSecretName:
+concurrent: 10
+checkInterval: 30
+logLevel: debug
+# logFormat: text
+# sentryDsn:
+preEntrypointScript: |
+  echo "preEntryporintScript is running..."
+
+rbac:
+  create: true
+  ## Define specific rbac permissions.
+  # resources: ["pods", "pods/exec", "secrets"]
+  # verbs: ["get", "list", "watch", "create", "patch", "delete"]
+
+  clusterWideAccess: false
+
+  ## Use the following Kubernetes Service Account name if RBAC is disabled in this Helm chart (see rbac.create)
+  ##
+  # serviceAccountName: default
+
+  ## Specify annotations for Service Accounts, useful for annotations such as eks.amazonaws.com/role-arn
+  ##
+  ## ref: https://docs.aws.amazon.com/eks/latest/userguide/specify-service-account-role.html
+  ##
+  # serviceAccountAnnotations: {}
+
+  podSecurityPolicy:
+    enabled: false
+    resourceNames:
+    - cicd-runner
+  #imagePullSecrets: []
+
+metrics:
+  enabled: true
+
+runners:
+  config: |
+    [[runners]]
+      [runners.kubernetes]
+        image = "ubuntu:16.04"
+  privileged: true
+  cache: {}
+  builds: {}
+  services: {}
+  helpers:
+    image: "debu99/cicd-runner-helper:alpine-latest"
+  imagePullPolicy: Always
+
+securityContext:
+  fsGroup: 65533
+  runAsUser: 100
+  ## Note: values for the ubuntu image:
+  # fsGroup: 999
+  # runAsUser: 999
+
+resources: {}
+  # limits:
+  #   memory: 256Mi
+  #   cpu: 200m
+  # requests:
+  #   memory: 128Mi
+  #   cpu: 100m
+
+affinity: {}
+
+nodeSelector: {}
+tolerations: []
+
+hostAliases: []
+  # Example:
+  # - ip: "127.0.0.1"
+  #   hostnames:
+  #   - "foo.local"
+  #   - "bar.local"
+  # - ip: "10.1.2.3"
+  #   hostnames:
+  #   - "foo.remote"
+  #   - "bar.remote"
+
+podAnnotations: {}
+podLabels: {}

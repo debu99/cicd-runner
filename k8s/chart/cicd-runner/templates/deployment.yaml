@@ -1,0 +1,169 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "cicd-runner.fullname" . }}
+  labels:
+    app: {{ include "cicd-runner.fullname" . }}
+    chart: {{ include "cicd-runner.chart" . }}
+    release: "{{ .Release.Name }}"
+    heritage: "{{ .Release.Service }}"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ include "cicd-runner.fullname" . }}
+  template:
+    metadata:
+      labels:
+        app: {{ include "cicd-runner.fullname" . }}
+        chart: {{ include "cicd-runner.chart" . }}
+        release: "{{ .Release.Name }}"
+        heritage: "{{ .Release.Service }}"
+        {{- range $key, $value := .Values.podLabels }}
+        {{   $key }}: {{ $value | quote }}
+        {{- end }}
+      annotations:
+        checksum/configmap: {{ include (print $.Template.BasePath "/configmap.yaml") . | sha256sum }}
+        checksum/secrets: {{ include (print $.Template.BasePath "/secrets.yaml") . | sha256sum }}
+        {{- if .Values.metrics.enabled }}
+        prometheus.io/scrape: 'true'
+        prometheus.io/port: '9252'
+        {{- end }}
+        {{- range $key, $value := .Values.podAnnotations }}
+        {{   $key }}: {{ $value | quote }}
+        {{- end }}
+    spec:
+      securityContext:
+        runAsUser: {{ .Values.securityContext.runAsUser }}
+        {{- if .Values.securityContext.fsGroup }}
+        fsGroup: {{ .Values.securityContext.fsGroup }}
+        {{- end}}
+      terminationGracePeriodSeconds: {{ .Values.terminationGracePeriodSeconds }}
+      initContainers:
+      - name: configure
+        command: ['sh', '/config/configure']
+        image: {{ include "cicd-runner.image" . }}
+        imagePullPolicy: {{ default "" .Values.imagePullPolicy | quote }}
+        securityContext:
+          allowPrivilegeEscalation: false
+        env:
+        {{ include "cicd-runner.runner-env-vars" . | indent 8 }}
+        volumeMounts:
+        - name: runner-secrets
+          mountPath: /secrets
+          readOnly: false
+        - name: scripts
+          mountPath: /config
+          readOnly: true
+        - name: init-runner-secrets
+          mountPath: /init-secrets
+          readOnly: true
+        {{- if .Values.certsSecretName }}
+        - name: custom-certs
+          readOnly: true
+          mountPath: /home/cicd-runner..cicd-runner.certs/
+        {{- end }}
+        resources:
+{{ toYaml .Values.resources | indent 10 }}
+      serviceAccountName: {{ if .Values.rbac.create }}{{ include "cicd-runner.fullname" . }}{{ else }}"{{ .Values.rbac.serviceAccountName }}"{{ end }}
+      containers:
+      - name: {{ include "cicd-runner.fullname" . }}
+        image: {{ include "cicd-runner.image" . }}
+        imagePullPolicy: {{ default "" .Values.imagePullPolicy | quote }}
+        securityContext:
+          allowPrivilegeEscalation: false
+        {{- include "cicd-runner.unregisterRunners" . | nindent 8 }}
+        command: ["/bin/bash", "/scripts/entrypoint"]
+        env:
+        {{ include "cicd-runner.runner-env-vars" . | indent 8 }}
+        livenessProbe:
+          exec:
+            command: ["/bin/bash", "/scripts/check-live"]
+          initialDelaySeconds: 60
+          timeoutSeconds: 1
+          periodSeconds: 10
+          successThreshold: 1
+          failureThreshold: 3
+        readinessProbe:
+          exec:
+            command: ["/usr/bin/pgrep","cicd.*runner"]
+          initialDelaySeconds: 10
+          timeoutSeconds: 1
+          periodSeconds: 10
+          successThreshold: 1
+          failureThreshold: 3
+        ports:
+        - name: metrics
+          containerPort: 9252
+        volumeMounts:
+        - name: runner-secrets
+          mountPath: /secrets
+        - name: etc-cicd-runner
+          mountPath: /home/cicd-runner/.cicd-runner
+        - name: scripts
+          mountPath: /scripts
+        {{- if .Values.certsSecretName }}
+        - name: custom-certs
+          readOnly: true
+          mountPath: /home/cicd-runner/.cicd-runner.certs/
+        {{- end }}
+        resources:
+{{ toYaml .Values.resources | indent 10 }}
+      volumes:
+      - name: runner-secrets
+        emptyDir:
+          medium: "Memory"
+      - name: etc-cicd-runner
+        emptyDir:
+          medium: "Memory"
+      - name: init-runner-secrets
+        projected:
+          sources:
+            {{- if and .Values.runners.cache .Values.runners.cache.cacheType }}
+            {{-   if and (include "cicd-runner.cache.secret" .) (eq .Values.runners.cache.cacheType "s3") }}
+            - secret:
+                name: {{ include "cicd-runner.cache.secret" . }}
+            {{-   end }}
+            {{-   if eq .Values.runners.cache.cacheType "gcs"}}
+            - secret:
+                name: {{ default "s3access" (include "cicd-runner.cache.secret" .) }}
+            {{-   end }}
+            {{- else if include "cicd-runner.cache.secret" . }}
+            - secret:
+                name: {{ include "cicd-runner.cache.secret" . }}
+            {{- end }}
+            - secret:
+                name: {{ include "cicd-runner.secret" . }}
+                items:
+                  - key: runner-registration-token
+                    path: runner-registration-token
+                  - key: runner-token
+                    path: runner-token
+      {{- if .Values.certsSecretName }}
+      - name: custom-certs
+        secret:
+          secretName: {{ .Values.certsSecretName }}
+      {{- end }}
+      - name: scripts
+        configMap:
+          name: {{ include "cicd-runner.fullname" . }}
+    {{- if .Values.imagePullSecrets }}
+      imagePullSecrets:
+{{ toYaml .Values.imagePullSecrets | indent 8 }}
+    {{- end }}
+    {{- if .Values.affinity }}
+      affinity:
+{{ toYaml .Values.affinity | indent 8 }}
+    {{- end }}
+    {{- if .Values.nodeSelector }}
+      nodeSelector:
+{{ toYaml .Values.nodeSelector | indent 8 }}
+    {{- end }}
+    {{- if .Values.tolerations }}
+      tolerations:
+{{ toYaml .Values.tolerations | indent 8 }}
+    {{- end }}
+    {{- if .Values.hostAliases }}
+      hostAliases:
+{{ toYaml .Values.hostAliases | indent 8 }}
+    {{- end }}
